@@ -29,12 +29,12 @@ github:
   username: bui-duc-huy             # change to your github username
 
 twitter:
-  username: duchuy            # change to your twitter username
+  username:             # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: BuiDucHuy
+  name: duchuy
   email: duchuy.124dk@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
