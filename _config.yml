@@ -15,33 +15,31 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: Duchuy                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: Duchuy's Blog   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Đây là nơi mình chia sẻ những kiến thức của bản thân
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://bui-duc-huy.github.io/'
 
 github:
-  username: github_username             # change to your github username
+  username: bui-duc-huy             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: duchuy            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@doamin.com             # change to your email address
+  name: BuiDucHuy
+  email: duchuy.124dk@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://github.com/bui-duc-huy       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
