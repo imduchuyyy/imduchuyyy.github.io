@@ -1,18 +1,18 @@
 ---
 title: Smart contract best practice 1
 date: 2021-07-15 15:17:30 +/-0700
-categories: [Blockchain, Smart contract best practices]
-tags: [blockchain, smartcontract, learning, practice]     # TAG names should always be lowercase
+categories: [Ethereum Blockchain, Smart contract best practices]
+tags: [blockchain, smartcontract, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
-<p>This blog provides a baseline knowledge of security considerations for Smart Contract developer (both EOS platfom and Ethereum platform).</p>
+<p>This blog provides a baseline knowledge of security considerations for Smart Contract developer in Ethereum Blockchain.</p>
 
 # Change your mindset
 <p>Smart contract programming requires a different engineering mindset than you may be used to. It is therefore not enough to defend against known vulnerabilities. Instead, you will need to learn a new philosophy of development.</p>
 
 ## General Philosophy
 
-<p>Ethereum and EOS are new highly experimental. Therefore, you should expect constant changes in the security landscape, as new bugs and security risks are discovered, and new best practices are developed.</p>
+<p>Ethereum is new highly experimental. Therefore, you should expect constant changes in the security landscape, as new bugs and security risks are discovered, and new best practices are developed.</p>
 
 ### Prepare for failure
 
