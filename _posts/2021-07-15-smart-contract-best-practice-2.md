@@ -5,7 +5,7 @@ categories: [Ethereum Blockchain, Smart contract best practices]
 tags: [blockchain, smartcontract, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
-<p>This blog provides a baseline knowledge of security considerations for Smart Contract developer (both EOS platfom and Ethereum platform).</p>
+<p>This blog provides a baseline knowledge of security considerations for Smart Contract developer in Ethereum Blockchain.</p>
 
 # Recommendations for Smart Contract Security in coding
 <p>This session demonstrates a number of design patterns which should generally be followed when writing smart contracts</p>
@@ -142,3 +142,5 @@ The consequence of the linearization will yield a fee value of 5, since C is the
 
 ## Use interface type instead of the address for type safety
 When a function takes a contract address as an argument, it is better to pass an interface or contract type rather than raw address. If the function is called elsewhere within the source code, the compiler it will provide additional type safety guarantees.
+
+<p style="font-size: 25px; font-weight: bold">Thank you for your reading and keep update with me</p>
