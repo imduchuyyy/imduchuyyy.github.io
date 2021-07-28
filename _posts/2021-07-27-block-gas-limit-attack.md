@@ -218,3 +218,5 @@ Sau đây sẽ là 1 số đề xuất khắc phục lỗi này:
 1. Xây dựng middleware để kiểm soát lượng gas trong 1 transaction được gửi tới node
 2. Chỉ cho phép gửi transaction với 1 số lượng nhất định
 3. Xây dựng các mô hình tránh spam khác
+
+<p style="font-size: 25px; font-weight: bold">Thank you for your reading and keep update with me</p>
