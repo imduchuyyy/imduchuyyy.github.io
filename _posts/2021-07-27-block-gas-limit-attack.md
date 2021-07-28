@@ -162,9 +162,9 @@ vim hacking.js
 ```
 
 ```javascript
-const network_endpoint = "http://178.128.90.155:8548"
-const address = "0x7465FED2f2d9071B0279107204bFd6D562ba4a97"
-const privateKey = "ef6dfc6ceb389da29a3b2467a4d4d5c90f722860b0e0438a1150e6796d3e36e5"
+const network_endpoint = "network-endpoint"
+const address = "address"
+const privateKey = "privateKey"
 const networkId = "4444"
 const gasLimit = 1890884448
 
