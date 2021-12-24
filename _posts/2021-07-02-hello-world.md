@@ -43,3 +43,4 @@ Blog này mình sẽ tập trung vào các chủ đề:
 >Hiện tại thì blog của mình sẽ viết bằng tiếng Việt và sẽ lồng ghép một số thuật ngữ bằng tiếng Anh nếu các thuật ngữ đó mình không thể dịch được nha.
 
 <p style="font-size: 25px; font-weight: bold">Tạm biệt và chúc mọi người 1 ngày vui vẻ và làm việc hiệu quả</p>
+
