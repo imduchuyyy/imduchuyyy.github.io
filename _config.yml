@@ -18,9 +18,9 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: DucHuy                          # the main title
+title: Terry                          # the main title
 
-tagline: Duchuy's Blog   # it will display as the sub-title
+tagline: Terry's Blog   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Đây là nơi mình chia sẻ những kiến thức của bản thân
@@ -37,8 +37,8 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Duchuy
-  email: duchuy.124dk@gmail.com             # change to your email address
+  name: Terry
+  email: terry.h.bd@protonmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/duchuyy__      # change to your twitter homepage
