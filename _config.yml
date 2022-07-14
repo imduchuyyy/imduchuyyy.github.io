@@ -80,7 +80,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://res.cloudinary.com/duchuy/image/upload/v1625212556/avatar_r0nqst.jpg
+avatar: https://res.cloudinary.com/duchuy/image/upload/v1657793417/cat_ninja_vcqrah.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
