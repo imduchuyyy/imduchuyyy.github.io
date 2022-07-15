@@ -35,7 +35,7 @@ Trên thế giới hiện nay đã có rất nhiều implement của zk-SNARKs, 
 
 Rust là ngôn ngữ lập trình được tạo ra vào năm 2006 bởi Graydon Hoare như một dự án phụ khi đang là developer tại Mozilla.  Rust pha trộn hiệu suất của các ngôn ngữ như C ++ với cú pháp thân thiện hơn, tập trung vào code an toàn và được thiết kế tốt giúp đơn giản hóa việc phát triển
 
-Nói một cách đơn giản, mình thấy Rust là ngôn ngữ lập trình cấp thấp (low level), định kiểu tĩnh (statically typed), là ngôn ngữ lập trình đa dụng (multi-paradigm), phù hợp với các ứng dụng tập trung vào sự an toàn và hiệu suất.
+Nói một cách đơn giản, mình thấy Rust là ngôn ngữ lập trình cấp thấp (low level), định kiểu tĩnh (statically typed), khá là đa dụng (multi-paradigm), phù hợp với các ứng dụng tập trung vào sự an toàn và hiệu suất.
 
 ## Giới thiệu về bellman
 

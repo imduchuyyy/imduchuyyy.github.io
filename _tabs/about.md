@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-This is the place where I share everything I know about technology, study, cryptocurrency and a few other cool things 😗 
+This is the place where I share everything I know about blockchain technology, cryptocurrency and a few other cool things 😗 
 
 ## What on this blog
 
@@ -14,6 +14,6 @@ This blog will focus on the following topics::
   * Lifetime
   * ....
 
-> Currently, my blog will be written in Vietnamese (my language) and English
+> Currently, my blog will be written in Vietnamese (my mother language) and English
 
 ## Many thanks 😋
