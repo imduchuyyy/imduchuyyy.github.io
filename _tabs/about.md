@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-This is the place where I share everything I know about technology, cryptocurrency and a few other cool things 😗 
+This is the place where I share everything I know about blockchain technology, cryptocurrency and a few other cool things 😗 
 
 ## What on this blog
 
