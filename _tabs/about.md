@@ -4,5 +4,16 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+This is the place where I share everything I know about technology, study, cryptocurrency and a few other cool things 😗 
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+## What on this blog
+
+This blog will focus on the following topics:: 
+  * Blockchain
+  * Coding
+  * Lifetime
+  * ....
+
+> Currently, my blog will be written in Vietnamese (my language) and English
+
+## Many thanks 😋
