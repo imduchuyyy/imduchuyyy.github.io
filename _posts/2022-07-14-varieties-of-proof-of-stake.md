@@ -3,6 +3,8 @@ title: Varieties of Proof of Stake!
 categories: [Blockchain, Consensus]
 tags: [blockchain, learning]     # TAG names should always be lowercase
 ---
+Blockchains require a mechanism to achieve consensus to verify transactions and the state of the ledger. One mechanism for arriving at consensus is `Proof-of-Stake (PoS)`.
+
 Proof-of-stake protocols are a class of consensus mechanisms for blockchains that work by selecting validators in proportion to their quantity of holdings in the associated cryptocurrency. This is done to avoid the computational cost of proof-of-work schemes.
 With proof-of-stake (POS), cryptocurrency owners validate block transactions based on the number of coins a validator stakes
 
@@ -65,7 +67,7 @@ Proof-of-Stake (PoS) consensus mechanisms were designed to address inefficiencie
 > Hundreds of blockchain projects have so far implemented some form of PoS, and by improving network decision-making, scalability, and resource efficiency, this consensus-mechanism category is expected to play an increasingly integral role in the future of the blockchain industry.
 
 
-# Reference
+# References
 1. <a href="https://www.investopedia.com/terms/p/proof-stake-pos.asp">What is proof of stake ?</a>
 2. <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/">Proof Of Stake In Ethereum</a>
 3. <a href="https://www.gemini.com/cryptopedia/proof-of-stake-delegated-proof-of-stake-consensus-mechanism">Varieties of Proof of Stake</a>
