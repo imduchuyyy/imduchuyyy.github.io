@@ -1,7 +1,7 @@
 ---
 title: Smart contract best practice 2
 date: 2021-07-15 17:20:30 +/-0700
-categories: [Ethereum Blockchain, Smart contract best practices]
+categories: [Blockchain, Smart contract]
 tags: [blockchain, smartcontract, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
