@@ -14,6 +14,6 @@ This blog will focus on the following topics::
   * Lifetime
   * ....
 
-> Currently, my blog will be written in Vietnamese (my language) and English
+> Currently, my blog will be written in Vietnamese (my mother language) and English
 
 ## Many thanks 😋
