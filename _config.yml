@@ -18,17 +18,17 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Terry                          # the main title
+title: Not The Blog                          # the main title
 
 tagline: Remember that you are very special !!.
 
    # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Write Your Story
+  Terry Blog
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://nottheblog.com'
 
 github:
   username: bui-duc-huy             # change to your github username
