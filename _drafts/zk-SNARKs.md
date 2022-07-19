@@ -29,6 +29,37 @@ Trên thế giới hiện nay đã có rất nhiều implement của zk-SNARKs, 
 - <a herf="https://github.com/zkcrypto/bellman">Bellman</a>
 - ...
 
+# Cách thức hoạt động của zk-SNARKs
+Zk-SNARKs bao gồm 3 thuật toán khác nhau: G, P and V
+
+1. G algorithm: G (Key generation) nhận vào input "lambda" (phải được giữ bí mật về input lambda) và chương trình C. Sau đó, G tiến hành tạo ra 2 public key, 1 khoá dành cho prover (pk) và một khoá dành cho verifier (vk). Các khoá này đều công khai cho tất cả các bên tham gia
+
+2. P algorithm: P dành cho prover nhận vào 3 tham số đầu vào:
+- pk: khoá dành cho prover (generate bằng G)
+- x: Tham số ngẫu nhiên public bởi các bên
+- w: private statament prover muốn chứng minh họ biết nhưng không muốn tiết lộ w
+
+    Thuật toán P tạo ra một bằng chứng `prf = P(pk, x, w)`
+
+3. V algorithm: V nhận vào 3 input và cơ bản trả về 1 trá trị boolean. 
+- vk: Khoá dành cho verifier (generate bằng G)
+- x: Tham số tạo bởi P
+- prf: Proof tạo bởi prover
+
+    `boolean a = V(vk, x, prf)`
+
+Một biết boolean có 2 lựa chọn, TRUE có nghĩa là bằng chứng cho P tạo ra là đúng, FALSE là ngược lại.
+
+Về tham số lambda và chương trình C:
+- Tham số Lambda phải được giữ bí mật vì bất kì ai có được tham số lambda đều có thể tạo ra <b>prf</b> giả mạo
+- Về cơ bản, hàm C nhận 2 giá trị đầu vào, giá trị công khai x và tham số bí mật w, Thường x sẽ được chọn là giá trị hash của w, `x = H(w)` và hàm C được thiết kế như sau:
+
+```python
+def C(x, w):
+    ...
+    return sha256(w) == x
+```
+
 # Example với ngôn ngữ Rust
 
 ## Giới thiệu về Rust
@@ -40,11 +71,19 @@ Nói một cách đơn giản, mình thấy Rust là ngôn ngữ lập trình c�
 ## Giới thiệu về bellman
 
 <a href="https://github.com/zcash/librustzcash/tree/master/bellman">Bellman</a>
- là một thư viện phần mềm zk-SNARK được phát triển bởi nhóm Zcash bằng ngôn ngữ Rust, thực hiện thuật toán Groth16. 
+ là một thư viện phần mềm zk-SNARK được phát triển bởi nhóm <a href="https://z.cash/">Zcash</a> bằng ngôn ngữ Rust, thực hiện thuật toán Groth16. 
 
 Quy trình tổng thể của bellman:
 
 <img src="https://miro.medium.com/max/1400/1*CXpf6f27J7kx83C_nRtF-g.png" />
+
+Quá trình tổng thể có thể được chia thành các bước sau:
+1. Flatten bài toán đa thức và xây dựng circuit tương ứng. Bước này được thực hiện bởi upper-level application
+2. Tạo R1CS (Rank 1 Constraint System) theo circuit ở bước 1
+3. Chuyển đổi R1CS (Rank 1 Constraint System) sang QAP (Quadratic Arithmetic Program). Phương pháp truyền thống là sử dụng phép <a href="https://en.wikipedia.org/wiki/Lagrange_polynomial">nội suy Lagrange</a>, nhưng để giảm độ phức tạp tính toán, nó có thể được thực hiện bằng <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a>.
+4. Setup các tham chiếu của QAP, đó là CRS (Common Reference Strings)
+5. Tạo proof dựa trên CRS và input của prover
+4. Verifier verify proof
 
 ## Let Code With Terry =))
 
