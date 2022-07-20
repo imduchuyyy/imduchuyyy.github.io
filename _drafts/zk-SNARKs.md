@@ -87,4 +87,77 @@ Quá trình tổng thể có thể được chia thành các bước sau:
 
 ## Let Code With Terry =))
 
+Trong ví dụ lần này, mình sẽ demo một bài toán đơn giản:
+
+> Lin và Terry biết một giá trị `c` và  Lin muốn chứng minh với Terry "Lin biết 2 số một giá trị `y` sao cho `hash(y) = c` mà không làm lộ giá trị của `y`"
+
+### Setup project
+
+Tạo project 
+```sh
+mkdir bellman-example 
+cd bellman-example
+```
+
+Init cargo project
+```sh
+cargo init
+```
+
+Add bellman dependencies vào file Cargo.toml 
+
+File `Cargo.toml` sẽ trông giống như thế này:
+
+```toml
+[package]
+authors = ["Terry"]
+name = "bellman-example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bellman = "0.13.1"
+```
+
+Build thử và chạy project 
+
+```sh
+cargo build && ./target/debug/bellman-example
+```
+
+Chúng ta đã hoàn thành setup rust project đơn giản.
+
+### Setup bài toán
+
+Bellman cung cấp cho chúng ta `Circuit` trait, chúng tá có thể sử dụng nó để synthesize các ràng buộc của bài toán trên
+
+```rust
+/// Input and output are in little-endian bit order.
+fn sha256<Scalar: PrimeField, CS: ConstraintSystem<Scalar>> (
+    mut cs: CS,
+    data: &[Boolean]
+) -> Result<Vec<Boolean>, SynthesisError> {
+    let input: Vec<_> = data.chunks(8).map(|c| c.iter().rev()).flatten().cloned().collect();
+
+    let res = sha256(cs.namespace(|| "SHA-256(input)"), &input)?;
+
+    Ok(res.chunks(8).map(|c| c.iter().rev()).flatten().cloned().collect())
+}
+
+
+struct OurProblem {
+    value: Option<[u8; 80]>,
+}
+
+impl<Scalar: PrimeField> Circuit<Scalar> for OurProblem {
+    fn synthesize<CS: ConstraintSystem<Scalar>>(self, cs: &mut CS) -> Result<(), SynthesisError> {
+    }
+}
+
+```
+
+
+
 https://github.com/arcalinea/bellman-examples
