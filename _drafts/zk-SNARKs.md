@@ -134,8 +134,8 @@ Chúng ta đã hoàn thành setup rust project đơn giản.
 Bellman cung cấp cho chúng ta `Circuit` trait, chúng tá có thể sử dụng nó để synthesize các ràng buộc của bài toán trên
 
 ```rust
-/// Input and output are in little-endian bit order.
-fn sha256<Scalar: PrimeField, CS: ConstraintSystem<Scalar>> (
+/// Implement sha256(hash) function. Input and output are in little-endian bit order.
+fn impl_sha256<Scalar: PrimeField, CS: ConstraintSystem<Scalar>> (
     mut cs: CS,
     data: &[Boolean]
 ) -> Result<Vec<Boolean>, SynthesisError> {
@@ -146,7 +146,6 @@ fn sha256<Scalar: PrimeField, CS: ConstraintSystem<Scalar>> (
     Ok(res.chunks(8).map(|c| c.iter().rev()).flatten().cloned().collect())
 }
 
-
 struct OurProblem {
     value: Option<[u8; 80]>,
 }
@@ -155,9 +154,84 @@ impl<Scalar: PrimeField> Circuit<Scalar> for OurProblem {
     fn synthesize<CS: ConstraintSystem<Scalar>>(self, cs: &mut CS) -> Result<(), SynthesisError> {
     }
 }
-
 ```
 
+Trong hàm `synthesize`, chúng ta define bài toán theo dạng <a href="https://en.wikipedia.org/wiki/Constraint_programming">Constraint programming</a> và alloc giá trị vào các biến được define ở `OurProblem` struct
 
+```rust
+fn synthesize<CS: ConstraintSystem<Scalar>>(self, cs: &mut CS) -> Result<(), SynthesisError> {
+    let bit_values = if let Some(value) = self.value {
+        value.into_iter().map(|byte| (0..8).map(move |i| (byte >> i) & 1u8 == 1u8)).flatten().map(|b| Some(b)).collect()
+    } else {
+        vec![None; 80 * 8]
+    };
 
-https://github.com/arcalinea/bellman-examples
+    let pre_bit = bit_values.into_iter().enumerate().map(|(i, b)| {
+        AllocatedBit::alloc(cs.namespace(|| format!("Pre bit {}", i)), b)
+    }).map(|b| b.map(Boolean::from))
+    .collect::<Result<Vec<_>, _>>()?;
+
+    let hash = impl_sha256(cs.namespace(|| "SHA-256(value)"), &pre_bit)?;
+
+    multipack::pack_into_inputs(cs.namespace(|| "pack hash"), &hash)
+}
+```
+
+### Tạo random key
+
+Tạo bộ `pk` và `pvk`, bộ key này sẽ được công khai và chia sẻ giữa Lin và Terry:
+
+```rust
+let params = {
+    let c = problem::OurProblem { value: None };
+
+    generate_random_parameters::<Bls12, _, _>(c, &mut OsRng).unwrap()
+};
+
+println!("Prepare key...");
+let pvk = prepare_verifying_key(&params.vk);
+```
+
+### Tạo proofs
+
+Tạo proof với hidden input. Ở đây mình sẽ lấy ví dụ giá trị `y` của Lin là `[40; 80]`. Lin gửi `inputs` + `proof` cho Terry với tuyên bố `Lin biết giá trị y sao cho hash(y) = x`
+
+```rust
+println!("Prepare input...");
+let hidden_value = [40; 80];
+let hash_bit = bytes_to_bits_le(&Sha256::digest(&hidden_value));
+let x = compute_multipacking::<Scalar>(&hash_bit);
+
+let c = problem::OurProblem {
+    value: Some(hidden_value),
+};
+
+println!("Create proof...");
+let proof = create_random_proof(c, &params, &mut OsRng).unwrap();
+```
+
+### Verify proof
+
+Terry có thể verify tuyên bố của Lin là đúng ở bước `Tạo proofs` bằng cách tự xác thực proof mà không cần liên hệ với Lin đây là điểm `non-interactive` trong zk-SNARKs: 
+
+```rust
+println!("Verify proof...");
+let result = verify_proof(&pvk, &proof, &x);
+
+println!("Result: {}", result.is_ok());
+```
+
+```sh
+Verify proof...
+Result: true
+```
+
+Toàn bộ source code của example mình sẽ để <a target="_blank" href="https://github.com/bui-duc-huy/bellman-example">ở đây</a>. Với bất kỳ thắc mắc các bạn có thể open issue ở repo, mình sẽ trả lời nếu mình biết :v.
+
+# Conclusion
+Như vậy qua bài viết cũng đã phần nào giới thiệu sơ lược về `zk-SNARKs`. Theo đánh giá cá nhân của mình, mình nghĩ `zk-SNARKs` là một công nghệ khá là thú vị và đáng học hỏi cho các bạn tìm hiểu về thuật toán mã hoá. Ứng dụng của nó cũng đã được chứng minh ở các dự án về blockchain lớn có thể kể tên như <a target="_blank" href="https://tornado.cash/">Tornado Cash</a>, <a target="_blank" href="https://z.cash/">Z Cash</a>
+
+# References 
+1. <a target="_blank" href="https://github.com/arcalinea/bellman-examples">Bellman example</a>
+2. <a target="_blank" href="https://starli.medium.com/zkp-deep-into-bellman-library-9b1bf52cb1a6">ZKP — Deep into Bellman Library</a>
+3. <a target="_blank" href="https://www.investopedia.com/terms/z/zksnark.asp">What Is zk-SNARK?</a>
