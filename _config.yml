@@ -31,20 +31,20 @@ description: >-                        # used by seo meta and the atom feed
 url: 'https://nottheblog.com'
 
 github:
-  username: bui-duc-huy             # change to your github username
+  username: terryyyz             # change to your github username
 
 twitter:
-  username: duchuyy__            # change to your twitter username
+  username: terryyy_eth            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Terry
-  email: terry.h.bd@protonmail.com             # change to your email address
+  email: duchuy.124dk@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/duchuyy__      # change to your twitter homepage
-    - https://github.com/bui-duc-huy       # change to your github homepage
+    - https://twitter.com/terryyy_eth      # change to your twitter homepage
+    - https://github.com/terryyyz       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
