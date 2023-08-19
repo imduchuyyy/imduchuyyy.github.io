@@ -1,8 +1,6 @@
 ---
 title: Smart contract best practice 1
 date: 2021-07-15 15:17:30 +/-0700
-categories: [Blockchain, Smart contract]
-tags: [blockchain, smartcontract, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
 <p>This blog provides a baseline knowledge of security considerations for Smart Contract developer in Ethereum Blockchain.</p>

@@ -1,7 +1,5 @@
 ---
 title: Everything About Tokenomics!
-categories: [Blockchain, Cryptocurrency]
-tags: [blockchain, cryptocurrency, learning]     # TAG names should always be lowercase
 ---
 
 > Tokenomics is the topic of understanding the supply and demand characteristics of cryptocurrencies.
@@ -37,12 +35,12 @@ Today, there are over 120,000,000 ETH in circulation. Though its yearly supply i
 
 Game theory incentivizes token holders to behave in honest ways. Good actors are rewarded by this mechanism whilst bad actors will lose their stake in the network. This ensures the network stays secure.
 
-# Example 
+# Example
 The great team at Messari created the chart below, which demonstrates the wide-ranging distribution among leading blockchains.
 
 <img src="https://pbs.twimg.com/media/E1l8L2dXMAExklv?format=jpg&name=large" />
 
-It is easy to see the stark difference in token allocation among the Public Blockchains, but only upon careful examination do these hidden factors emerge. For example, Ethereum and EOS are heavily skewed in favor of public investors, in comparison to Binance or Solana. Still, distribution alone only paints a vague picture. 
+It is easy to see the stark difference in token allocation among the Public Blockchains, but only upon careful examination do these hidden factors emerge. For example, Ethereum and EOS are heavily skewed in favor of public investors, in comparison to Binance or Solana. Still, distribution alone only paints a vague picture.
 
 ## Solana tokenomic
 
