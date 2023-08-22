@@ -1,9 +1,9 @@
 ---
-title: Research | Account Abstraction - Where we are?
+title: "[Research] Account Abstraction in multi-chain world?"
 date: 2023-07-22 10:17:30 +/-0700
 ---
 
-"Account Abstraction" is a proposal to increase flexibility in management and behavior of account in blockchain-one that’s increasingly the subject of many discussions in the crypto community. However, what exactly is account abstraction and why we need to care about it ?
+"Account Abstraction" is a proposal to increase flexibility in management and behavior of account in blockchain-one that’s increasingly the subject of many discussions in the crypto community. However, Do we already have Account Abstraction. A year ago, Vitalik proposed EIP-4337 -
 
 ---
 
