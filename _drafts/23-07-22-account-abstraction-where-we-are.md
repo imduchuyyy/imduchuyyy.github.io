@@ -3,36 +3,24 @@ title: "[Research] Account Abstraction in multi-chain world?"
 date: 2023-07-22 10:17:30 +/-0700
 ---
 
-"Account Abstraction" is a proposal to increase flexibility in management and behavior of account in blockchain-one that’s increasingly the subject of many discussions in the crypto community. However, Do we already have Account Abstraction. A year ago, Vitalik proposed EIP-4337 -
+"Account Abstraction" is a proposal to increase flexibility in management and behavior of account in blockchain-one that’s increasingly the subject of many discussions in the crypto community. However, do we already have Account Abstraction?.
 
 ---
 
-## Background on Ethereum Accounts?
-To understand the value of account abstraction, it necessary to understand the fundamental of Ethereum account first. On Ethereum, there are two types of account: External Owned Account (EOA) and Smart Contract Account (SCA)
-
-An EOA is made up of [a cryptography pair of keys](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm): User will have a pair of keys: private key and public key.
-It is represented by an address. A private key is used to sign transactions, it grants users custody over the funds associated with their accounts.
-
-There is the workflow to create an EOA and interacting with Dapp I found on [Metamask post](https://metamask.io/news/latest/account-abstraction-past-present-future/).
-
-<img src="https://images.ctfassets.net/9sy2a0egs6zh/5GwjBrBDSxaBqoPLzgY9Ah/436d6837761be954dc756628819a338f/Workflow_of_creating_an_EOAand_interacting_with_dapp_2x.png">
-
-The key pair can sign transactions given by the address. This results in special restrictions, for example only one key  to authorize transactions and control the account. Unlike the regular bank account, users cannot "recover" their EOA wallet if private key is lost or stolen. This require a good understanding of how a blockchain works to use safely, which can be a barrier for some users.
-
-> Takeaway:
-- EOA wallet cannot recover without private key
-- Private keys create single points of failure. If the private key was stolen, the funds associated with this wallet will be lost forever and user can no longer using this wallet (think about an [SoulBound Token](https://academy.binance.com/en/articles/what-are-soulbound-tokens-sbt)).
-
-## How about Smart Contract Account also Account Abstraction?
+## Problem of Account Abstraction in multi-chain world?
 Account Abstraction refers to separating the control of an account from its associated private key. This allow an account to be controlled by a smart contract rather than simply a private key. This powerful concept enables developers to build complex wallet application.
 
-One of the most significant benefits of account abstraction is that it creates more sophisticated smart contracts. Therefore, this mean that smart contracts can execute more complex logic to verify an transaction than what an EOA can do. Think about `signature abstraction`, this can solve these problem by removing ECDSA signatures as default authorization mechanism for the wallet. Rather, user are permitted to define custom rules for authorizing wallets to initiate transactions. The account abstraction also enables new mechanism for wallet recovery - social recovery ([Argent - What is Social Recovery?](https://www.argent.xyz/learn/what-is-social-recovery/))
+However, account abstraction wallet, by ERC-4337 design, unique smart contract instances deployed on individual chains. While users can create account abstraction wallets on different chains, it leak to the problem for wallet protocol that how to manage the key for several smart contract exit on multiple blockchain.
 
-There is an example of how account abstraction wallet work from Braavos team, they are building an account abstraction wallet with custom verification logic for user wallet on StarkWare, [read more here](https://braavos.app/account-abstraction-why-should-you-care/):
+> How to manage authorize logic for several smart contract on multi-chain but still keep easy approach way for user?
 
-<img src="https://braavos.app/wp-content/uploads/2023/04/Authentication-Types-account-abstraction-security-pyramid-1.png">
+## Currently solution: Reading state on one chain and execute on other chain
+When I making the research to solve the problem above I found some solution.
+1. [Safe team's proposal](https://forum.safe.global/t/how-can-a-safe-hold-asset-on-multiple-chains/2242)
+2. [Polkadot's talk](https://forum.polkadot.network/t/multichain-friendly-account-abstraction/1298)
 
-Account Abstraction also propose a new concept for fee mechanism and nonce mechanism like paying gas fee in ethereum with custom ERC20 or execute many transactions it just one request, you can read about this on [Metamask team's post](https://metamask.io/news/latest/account-abstraction-past-present-future/)
+Both of these solutions are that: The wallets live on chain B, C, D... but the validation rules on chain A, when user make update the validation rules on chain A, other chain will synchronously reads chain A by using Merkle proof, or in the future this could be batched with some KZG or using zk-SNARK or other scheme
+
 
 ## Account Abstraction and ERC-4337?
 Account Abstraction is good, but do we already have it now?.  The concept of Account Abstraction was formed after a short period after the existence of Ethereum. There are many proposals to make this happen, while other EIPs required some protocol changes in the consensus layer. [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) aims to provide account abstraction without any consensus layer changes
