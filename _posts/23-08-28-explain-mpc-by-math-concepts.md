@@ -37,7 +37,7 @@ Let reconstruct the private key with given 2 points:
 
 - Now the private key is `65`
 
-> Remember that, ONLY if Alice has the approval from at lease `K=2` friends, she can reconstruct the key
+> Remember that, ONLY if Alice has the approval from at least `K=2` friends, she can reconstruct the key
 
 
 ## Real-World Applications and Beyond Basic Math
