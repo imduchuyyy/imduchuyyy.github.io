@@ -1,8 +1,6 @@
 ---
 title: Smart contract best practice 2
 date: 2021-07-15 17:20:30 +/-0700
-categories: [Blockchain, Smart contract]
-tags: [blockchain, smartcontract, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
 <p>This blog provides a baseline knowledge of security considerations for Smart Contract developer in Ethereum Blockchain.</p>
@@ -131,7 +129,7 @@ contract C is Final {
 
 contract A is B, C {
     function A () public B(3) C(5) public {
-        setFee(); 
+        setFee();
     }
 }
 ```

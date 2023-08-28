@@ -1,7 +1,5 @@
 ---
 title: Varieties of Proof of Stake!
-categories: [Blockchain, Consensus]
-tags: [blockchain, learning]     # TAG names should always be lowercase
 ---
 Blockchains require a mechanism to achieve consensus to verify transactions and the state of the ledger. One mechanism for arriving at consensus is `Proof-of-Stake (PoS)`.
 
@@ -47,18 +45,18 @@ While the PoSA consensus model allows for short block times and lower costs, it 
     width: auto;
     overflow-x: hidden;
   }
-  
+
 .table-wrapper>table tbody tr td, .table-wrapper>table thead th {
     white-space: unset;
     vertical-align: top;
   }
 </style>
 
-Consensus | Props | Cons 
+Consensus | Props | Cons
 | ----   | - | - |
-Proof Of Stake | - Provides fast and inexpensive transaction procession. | - Validators with large holdings can have excessive influence on transaction verification. <br> - Complexity to set up. 
-Delegate Proof Of Stake | - DPoS allows for block producers to validate transactions in seconds – providing faster transactions than PoS and PoW. <br> - Delegates are elected through a democratic voting system, so each token holder has a say. | - By putting validation into a small number of hands, Delegates can form cartels making the blockchain less decentralized and less resilient to attacks.  
-Proof Of Stake Authority | - Allow for short block times and lower costs | - Low decentralization, low security. <br> - Reputation cannot always keep participants from malicious actions. If the reward for fraud is more valuable than the authority, a participant can harm the system. 
+Proof Of Stake | - Provides fast and inexpensive transaction procession. | - Validators with large holdings can have excessive influence on transaction verification. <br> - Complexity to set up.
+Delegate Proof Of Stake | - DPoS allows for block producers to validate transactions in seconds – providing faster transactions than PoS and PoW. <br> - Delegates are elected through a democratic voting system, so each token holder has a say. | - By putting validation into a small number of hands, Delegates can form cartels making the blockchain less decentralized and less resilient to attacks.
+Proof Of Stake Authority | - Allow for short block times and lower costs | - Low decentralization, low security. <br> - Reputation cannot always keep participants from malicious actions. If the reward for fraud is more valuable than the authority, a participant can harm the system.
 
 ## Summary
 

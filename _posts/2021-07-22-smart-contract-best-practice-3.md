@@ -1,13 +1,11 @@
 ---
 title: Smart contract best practice 3
 date: 2021-07-25 10:20:30 +/-0700
-categories: [Blockchain, Smart contract]
-tags: [blockchain, smartcontract, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
 This blog provides a baseline knowledge of security considerations for Smart Contract developer in Ethereum Blockchain.
 
-# A list of Known Attacks 
+# A list of Known Attacks
 
 The following is a list of known attacks which you should be aware of, and defend against when writing smart contracts.
 
@@ -62,7 +60,7 @@ function withdraw(uint _amount) payable public returns (bool) {
     if (success) {
         balance[msg.sender] -= amount;
     }
-    
+
     lockLogic = false;
     return true;
 }
@@ -87,7 +85,7 @@ For this type of attack, it is important to the adversary that the original func
 The attacker can insert transactions before or after logic of user's smart contract execute
 
 ### Suppression
-In this type of attack, after attacker runs his function, he tries to delay user from running function. 
+In this type of attack, after attacker runs his function, he tries to delay user from running function.
 
 This was the case on-chain hacks, the attacker sent multiple transactions with high `gasPrice` and `gasLimit` to custom smart contracts that assert (or use other means) to consume all the gas and fill up the block's `gasLimit`
 

