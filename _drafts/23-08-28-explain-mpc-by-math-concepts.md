@@ -7,11 +7,12 @@ Cryptocurrencies have revolutionized the world of finance, offering exciting opp
 
 ---
 
-### Understanding the Basics of MPC Wallets
+## Understanding the Basics of MPC Wallets
 At its core, an MPC wallet is a cryptographic innovation that enables multiple parties to collaboratively manage and transact with cryptocurrencies while maintaining the privacy of their individual inputs. Let's delve into this concept using fundamental math principles.
 
-### Secret Sharing
 Imagine a scenario where Alice is new to cryptocurrency. She's worried that if she forgets her private key, she could lose all of her crypto assets. She reaches out to her friends, and they're willing to help her protect her key. Traditionally, Alice might share a single private key, which is a risky approach. However, with MPC wallets, she can embrace a concept known as "secret sharing."
+
+### Secret Sharing
 
 Alice's intention is simply to have her friends assist her in case she loses her private key. With MPC, Alice will "split her private key into N parts." Let's say Alice's private key is `S=65`. She wants `N=4` friends to help secure her funds, and ONLY if she receives at least `K=2` (where K <= N) approvals, she can recover the key.
 
@@ -39,7 +40,7 @@ Let reconstruct the private key with given 2 points:
 > Remember that, ONLY if Alice has the approval from at lease `K=2` friends, she can reconstruct the key
 
 
-### Real-World Applications and Beyond Basic Math
+## Real-World Applications and Beyond Basic Math
 In real-world MPC wallets, advanced cryptographic protocols and algorithms are employed to ensure the highest levels of security. The use of sophisticated mathematical techniques safeguards transactions against various types of attacks, including collusion attacks and insider threats.
 
 MPC wallets also open the door to exciting possibilities, such as decentralized finance (DeFi) applications, where multiple parties can pool their assets for lending, borrowing, and yield farming while maintaining control over their private keys.
