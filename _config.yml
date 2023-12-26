@@ -31,7 +31,7 @@ description: >-                        # used by seo meta and the atom feed
 url: 'https://nottheblog.com'
 
 github:
-  username: terryyyz             # change to your github username
+  username: terryyy-eth             # change to your github username
 
 twitter:
   username: terryyy_eth            # change to your twitter username
@@ -44,7 +44,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/terryyy_eth      # change to your twitter homepage
-    - https://github.com/terryyyz       # change to your github homepage
+    - https://github.com/terryyy-eth       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -82,7 +82,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://res.cloudinary.com/duchuy/image/upload/v1657793417/cat_ninja_vcqrah.png
+avatar: https://res.cloudinary.com/duchuy/image/upload/v1703564774/2023-12-26_11.25.55_h6jffq.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
