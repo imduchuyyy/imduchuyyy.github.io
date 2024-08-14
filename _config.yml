@@ -18,33 +18,33 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Not The Blog                          # the main title
+title: imduchuyyy                          # the main title
 
-tagline: Remember that you are very special !!.
+tagline: Web3 Builder | Web3 Investor.
 
    # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Terry Blog
+  imduchuyyy's homepage, Web3 Builder | Web3 Investor !!.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://nottheblog.com'
+url: 'https://imduchuyyy.github.io'
 
 github:
-  username: terryyy-eth             # change to your github username
+  username: imduchuyyy             # change to your github username
 
 twitter:
-  username: terryyy_eth            # change to your twitter username
+  username: imduchuyyy            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Terry
-  email: duchuy.124dk@gmail.com             # change to your email address
+  name: imduchuyyy
+  email: imduchuyyy@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/terryyy_eth      # change to your twitter homepage
-    - https://github.com/terryyy-eth       # change to your github homepage
+    - https://twitter.com/imduchuyyy      # change to your twitter homepage
+    - https://github.com/imduchuyyy       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -82,7 +82,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://res.cloudinary.com/duchuy/image/upload/v1703564774/2023-12-26_11.25.55_h6jffq.jpg
+avatar: https://euc.li/imduchuyyy.eth
 
 # boolean type, the global switch for ToC in posts.
 toc: true
