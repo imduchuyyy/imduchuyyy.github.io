@@ -1,6 +1,6 @@
 ---
 title: "Why we need liquid staking?"
-date: 2024-08-24 18:21:00 +/-0700
+date: 2024-09-03 18:21:00 +/-0700
 ---
 
 Heyyy, trong một ngày mưa gió, ngồi ở quán cafe ngắm đường phố, cũng rảnh rỗi nên viết bài chia sẽ 1 xíu với mọi người về Liquid Staking nhen. Topic liquid staking thực sự cũng không mới, chỉ cần lướt một vòng trên mạng là mọi người có thể hiểu được "sương sương" liquid staking là gì rồi. Nên trong post này, mình sẽ tiếp cận liquid staking với một hướng khác đi xíu, mình sẽ đi tìm hiểu thử đâu là vấn đề cơ bản hình thành nên giải pháp liquid staking, cũng như liquid staking sinh ra để làm gì
