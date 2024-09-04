@@ -19,7 +19,7 @@ Có thể thấy rằng trong hình trên, khi bắt đầu deposit, stakers s�
 
 Câu trả lời được các dự án Liquid Staking đưa ra là kết nối 2 tập người dùng này lại với nhau và cho phép họ trao đổi vị thế staking. Từ là người muốn stake sẽ mua lại vị thế stake của người khác bằng ETH của họ (việc này giúp họ có vị thế staking ngay lập tức mà không cần phải đợi 12-24 tiếng), người đang stake có thể bán vị thế của mình cho người khác và nhận về ETH (việc này giúp họ có thể rút tiền ngay lập tức mà không cần đợi 1-7 ngày).
 
-Làm thế nào để thực hiện việc này ?
+<i>Làm thế nào để thực hiện việc này ?</i>
 
 Các dự án liquid staking đã mapping vị thế staking của stakers thành 1 đồng ERC-20 token đại điện vì vậy các đồng ERC-20 đại diện này có thể được deposistors và withdrawers mua bán với nhau thông qua decentralized exchange như Uniswap.
 
@@ -28,4 +28,4 @@ Với việc có token đại diện cho các vị thế Staking, nhưng ngườ
 Ngoài ra thì còn 1 số problem đã được giải quyết như Staker có thể stake với số lượng Ether tuỳ ý mà không cần phải tuân theo quy định của network, các ý này được giải thích khá rõ ràng ở đây: <a href="https://chain.link/education-hub/liquid-staking">What is liquid staking - by Chainlink</a>
 
 # Good approach
-Thực sự các dự án Liquid staking đã có cách giải quyết vấn đề khá tốt. Không những giải quyết được các nhu cầu cơ bản cho user cũng đồng thời mở ra được nhiều usecase mới khi người dùng tham gia stake. Giờ đây stake không chỉ là hoạt động bảo vệ network nhận reward mà còn trở thành một trong các lớp infra chính của nền defi.
+Thực sự các dự án Liquid staking đã có cách giải quyết vấn đề khá tốt. Không những giải quyết được các nhu cầu cơ bản cho user cũng đồng thời mở ra được nhiều usecase mới khi người dùng tham gia stake. Giờ đây stake không chỉ là hoạt động bảo vệ network nhận reward mà còn trở thành một trong các lớp infra chính của nền Decentralize Finance.
