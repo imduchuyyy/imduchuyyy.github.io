@@ -29,10 +29,10 @@ Khi có 1 user stake vào mạng Liquid staking protocol (LSP), LSP sẽ issue c
 
 Mình sẽ lấy 1 ví dụ cụ thể:
 - <b>Tại thời điểm năm 2020</b>: Mình stake vào LSP với tỷ giá trao đổi là 1:1 (tức 1 ether đổi được 1 token)
-- <b>Một năm sau (tức 2021)</b>: Mình muốn rút ether bằng việc bán lại token đại diện cho LSP và nhận lại Ether đã stake trước đó 1 năm. Lúc này tỷ giá sẽ thay đổi (giả định bỏ qua trượt giá do market condition và protocol fee) là 1:1.04 (Tức là với mỗi 1 token đại diện mình sẽ nhận về 1,04 ether, nếu trừ đi 1 ether stake ban đầu thì 0,04 ether chính là lượng yeild mình nhận được sau 1 năm stake)
-- Và cứ thế tiếp diễn... Exchange rate quy đổi giữa Token và Ether sẽ luôn tăng do lượng yeild được sinh ra từ network.
+- <b>Một năm sau (tức 2021)</b>: Mình muốn rút ether bằng việc bán lại token đại diện cho LSP và nhận lại Ether đã stake trước đó 1 năm. Lúc này tỷ giá sẽ thay đổi (giả định bỏ qua trượt giá do market condition và protocol fee) là 1:1.04 (Tức là với mỗi 1 token đại diện mình sẽ nhận về 1,04 ether, nếu trừ đi 1 ether stake ban đầu thì 0,04 ether chính là lượng yield mình nhận được sau 1 năm stake)
+- Và cứ thế tiếp diễn... Exchange rate quy đổi giữa Token và Ether sẽ luôn tăng do lượng yield được sinh ra từ network.
 
-Như hình dưới đây là exchange rate của ETH với wstETH - token đại diện được Lido (dự án lớn nhất về Liquid staking trên Ethereum) issue ra, có thể thấy được rate này sẽ luôn luôn tăng do lượng yeild được sinh ra trong hoạt động staking:
+Như hình dưới đây là exchange rate của ETH với wstETH - token đại diện được Lido (dự án lớn nhất về Liquid staking trên Ethereum) issue ra, có thể thấy được rate này sẽ luôn luôn tăng do lượng yield được sinh ra trong hoạt động staking:
 
 ![wstETH/ETH](/images/wstETH-ETH.png)
 
