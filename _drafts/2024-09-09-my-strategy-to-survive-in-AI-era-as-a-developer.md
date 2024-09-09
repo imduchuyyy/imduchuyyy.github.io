@@ -1,5 +1,5 @@
 ---
-title: "My strategy to survive in AI ear as a devloper?"
+title: "My strategy to survive in AI era as a devloper?"
 date: 2024-09-09 09:21:00 +/-0700;
 ---
 
@@ -9,10 +9,20 @@ As you know, I'm currently a blockchain developer, and I've been working in this
 
 ## Keep learning
 
-Keep learning is the most important thing you can do to survive in the AI era as a developer. Technology is changing so fast, and you need to keep up with the latest trends and tools. You need to be constantly learning new things, experimenting with new technologies, and improving your skills. This will help you stay relevant and competitive in the job market.
+Keep learning is the most important thing you can do to survive in the AI era as a developer. Technology is changing so fast, and you need to keep up with the latest trends and tools. You need to be constantly learning new things, experimenting with new technologies, and improving your skills. This will help you stay relevant and competitive in the job market. Here is few thing you can do to keep learning:
+
+### Learn into AI.
+
+To defence AI, you need to learn AI. You don't need to be an expert in AI, but you need to have a basic understanding of how it works and how it can be used in your field. There are many online courses and tutorials that can help you learn AI, so take advantage of them.
+
+### Use AI to learn.
+
+Use AI to learn a new thing, there are many AI-powered tools that can help you learn new things faster and more efficiently. For example, you can use AI-powered chatbots to help you learn a new programming language or AI-powered search engines to help you find the information you need.
 
 ## Being creative
 
 ## Invest
 
 ## Have a small business
+
+> 70% of this post was written by AI. =))
