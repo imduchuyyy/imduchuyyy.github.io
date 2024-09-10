@@ -1,36 +1,27 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Bundler cache
+.bundle
+vendor
+Gemfile.lock
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
 
-# testing
-/coverage
+# RubyGems
+*.gem
 
-# next.js
-/.next/
-/out/
+# NPM dependencies
+node_modules
+package-lock.json
 
-# production
-/build
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
 
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Misc
+_sass/dist
+assets/js/dist

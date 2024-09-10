@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chirpy Starter
 
-## Getting Started
+[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
+[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
-First, run the development server:
+When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
+`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
+from the theme's gem. If you have ever installed this theme gem, you can use the command
+`bundle info --path jekyll-theme-chirpy` to locate these files.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
+able to enjoy the out-of-the-box experience when using feature-rich themes.
+
+To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
+Jekyll site. The following is a list of targets:
+
+```shell
+.
+├── _config.yml
+├── _plugins
+├── _tabs
+└── index.html
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
+latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of
+the basic environment. [Git](https://git-scm.com/) also needs to be installed.
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it
+`USERNAME.github.io`, where `USERNAME` represents your GitHub username.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then clone it to your local machine and run:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```console
+$ bundle
+```
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+
+## License
+
+This work is published under [MIT][mit] License.
+
+[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
+[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
+[use-template]: https://github.com/cotes2020/chirpy-starter/generate
+[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
+[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
