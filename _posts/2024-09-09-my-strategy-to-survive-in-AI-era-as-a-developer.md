@@ -1,5 +1,5 @@
 ---
-title: "My strategy to survive in AI era as a devloper?"
+title: "My strategy to survive in AI era as a developer?"
 date: 2024-09-09 09:21:00 +/-0700;
 categories: [AI, Developer, Strategy]
 tags: [life, learning]
