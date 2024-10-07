@@ -1,5 +1,5 @@
 ---
-title: "KZG in practice - Moon math to scale Ethereum"
+title: "Explain KZG - Moon math to scale Ethereum"
 date: 2024-10-07 07:21:00 +/-0700
 math: true
 ---
