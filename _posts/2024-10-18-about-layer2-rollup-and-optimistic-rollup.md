@@ -96,7 +96,7 @@ Công nghệ Layer 2 đang ngày càng phát triển và hứa hẹn sẽ mở r
 - [Github](https://github.com/imduchuyyy)
 - [Twitter (X)](https://x.com/imduchuyyy)
 
-# Referrences
+# References
 1. [Ethereum rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups)
 2. [Arbitrum Assertion Tree](https://docs.arbitrum.io/how-arbitrum-works/assertion-tree)
 3. [ETH Scaling 2: How the Op Rollup and Zk Rollup Work](https://medium.com/@geraldlee0825/eth-scaling-2-how-the-op-rollup-and-zk-rollup-work-d6003d8fce2)
