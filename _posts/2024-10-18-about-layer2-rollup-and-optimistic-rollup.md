@@ -65,12 +65,12 @@ Ngoài việc cam kết state root, sequencer còn phải cam kết transaction 
 
 Việc cam kết cả state root và transaction root có ý nghĩa rất quan trọng trong hệ thống Optimistic Rollup. Nó cung cấp cho người dùng một phương thức để kiểm chứng tính đúng đắn của hệ thống. Bên cạnh đó, nó cũng giúp các smart contract trên Layer 1 của Ethereum quản lý trạng thái của Optimistic Rollup một cách hiệu quả. Khi một state root mới được cam kết lên Layer 1, các smart contract sẽ tạm thời chấp nhận nó. Tuy nhiên, nếu có bất kỳ nghi ngờ nào về tính hợp lệ của state root này, người dùng hoặc các bên tham gia có thể sử dụng cơ chế <b>fraud-proof</b> để thách thức và xác minh lại tính hợp lệ của nó.
 
-## Fraud prove
+## Fraud Proof
 Như đã đề cập trước đó, sau khi sequencer đăng tải batch lên Layer 1, bất kỳ ai cũng có thể kiểm tra lại kết quả do sequencer tạo ra. Nếu trong khoảng thời gian quy định có người phát hiện và thách thức tính hợp lệ của một state root, giao thức Rollup sẽ khởi tạo cơ chế fraud-proof. Cơ chế fraud-proof này mang tính chất tương tác: người đưa ra tranh chấp sẽ đóng vai trò tấn công, trong khi phía còn lại (thường là sequencer) sẽ phải bảo vệ tính đúng đắn của kết quả mà họ đã công bố.
 
-Hiện tại có hai hiện thực chính của Fraud prove:
+Hiện tại có hai hiện thực chính của Fraud proof:
 
-### Single-round interactive proving
+### Single-round proving
 Khi có một tranh chấp xảy ra, tức là một bên cho rằng state root do sequencer đề xuất không chính xác, giao thức Rollup sẽ thực thi lại toàn bộ các giao dịch diễn ra trên Layer 2 tại Layer 1 và tính toán kết quả cuối cùng để xác định bên nào đúng. Mặc dù cách tiếp cận này giúp đưa ra kết quả chính xác, nhưng việc thực thi lại tất cả các giao dịch của Layer 2 trên Layer 1 đòi hỏi chi phí rất lớn cho mạng lưới. Chính vì lý do này, các hệ thống Optimistic Rollup đang dần chuyển sang cơ chế <b>multi-round interactive proving</b> để giảm thiểu chi phí.
 
 ### Multi-round interactive proving
