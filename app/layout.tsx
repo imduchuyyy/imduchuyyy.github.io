@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,15 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-gray-900">
-        <header className="mx-auto max-w-3xl px-4 py-8">
-          <Link href="/" className="text-2xl font-bold">/my-blog</Link>
-          <p className="text-sm text-gray-500">built with Next.js + Tailwind</p>
-        </header>
-        <main className="mx-auto max-w-3xl px-4 pb-16">{children}</main>
-        <footer className="mx-auto max-w-3xl px-4 py-10 text-sm text-gray-400">
-          © {new Date().getFullYear()} Me
-        </footer>
+      <body className="min-h-screen">
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
