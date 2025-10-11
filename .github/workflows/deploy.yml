@@ -3,6 +3,16 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write        # needed
+  id-token: write     # needed for OIDC
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,9 +22,16 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run build
       - run: touch out/.nojekyll
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          publish_branch: gh-pages
+          path: ./out
 
+  deploy:
+    environment:
+      name: github-pages   # must match the protected environment
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
