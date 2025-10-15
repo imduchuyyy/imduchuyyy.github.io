@@ -1,6 +1,5 @@
 import { Github, Linkedin, Mail, ArrowDown, Contact, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 export function Hero() {
@@ -24,33 +23,10 @@ export function Hero() {
             </h1>
 
             <div className="space-y-2">
-              <h2 className="text-xl sm:text-2xl md:text-3xl text-muted-foreground">
-                home on the internet
-              </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Based in Vietnam · 5+ years of experience building innovative solutions
-                for Web2 and Web3 ecosystems · Writing technical, finaincial, and
-                educational blogs about blockchain technology
+                I built a lot of opensources, you can find them here.
               </p>
             </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-4">
-            <Link href="blogs">
-              <Button
-                variant="default"
-              >
-                Read my blogs
-              </Button>
-            </Link>
-            <Link href="projects">
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection("contact")}
-              >
-                View my build
-              </Button>
-            </Link>
           </div>
 
           <div className="flex items-center justify-center gap-4">
@@ -73,7 +49,7 @@ export function Hero() {
               href="/posts"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="size-6 mx-auto" />
+              <ArrowDown className="size-6 mx-auto" />
             </Link>
           </div>
         </div>

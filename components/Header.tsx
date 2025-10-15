@@ -20,21 +20,6 @@ export function Header() {
             {"<huy />"}
           </button>
 
-          <nav className="hidden md:flex items-center gap-10">
-            <button
-              onClick={() => scrollToSection("blog")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Blogs
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Projects
-            </button>
-          </nav>
-
           <ThemeToggle />
         </div>
       </div>
