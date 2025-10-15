@@ -83,7 +83,7 @@ const projects: Project[] = [
     forks: 8,
     language: "TypeScript",
     tags: ["solidity", "typescript", "nextjs", "react"],
-    url: "https://github.com/abstraction",
+    url: "https://github.com/abstraction-hq",
   },
   {
     id: 7,

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "imduchuyyy",
     images: [
       {
-        url: "https://imduchuyyy.github.io/og-image.png",
+        url: "https://euc.li/imduchuyyy.eth",
         width: 1200,
         height: 630,
         alt: "imduchuyyy - Web3 Developer & Open Source Enthusiast",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "imduchuyyy - Web3 Developer & Open Source Enthusiast",
     description: "Passionate about building elegant solutions to complex problems. Love contributing to open source and creating tools that make developers' lives easier. Always learning, always shipping.",
-    images: ["https://imduchuyyy.github.io/og-image.png"],
+    images: ["https://euc.li/imduchuyyy.eth"],
     creator: "@imduchuyyy",
   },
   robots: {
@@ -49,12 +49,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "https://euc.li/imduchuyyy.eth",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-    other: {
-      rel: "android-chrome",
-      url: "/android-chrome-192x192.png",
-    },
   },
 };
 
