@@ -83,6 +83,18 @@ export default function CVPage() {
                                 <li>Participated in innovative blockchain projects, boosting team efficiency.</li>
                             </ul>
                         </Card>
+                        <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
+                            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                                <div>
+                                    <h3 className="text-xl font-bold text-primary">Frontend Intern</h3>
+                                    <p className="text-lg font-medium text-white/90">Acexis</p>
+                                </div>
+                                <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-white/5 px-3 py-1 rounded-full">
+                                    <Calendar className="w-4 h-4" />
+                                    <span>Nov 2019 — Aug 2020</span>
+                                </div>
+                            </div>
+                        </Card>
                     </div>
                 </section>
 
