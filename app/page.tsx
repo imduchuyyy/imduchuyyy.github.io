@@ -67,7 +67,7 @@ export default function App() {
         
         {/* Footer */}
         <footer className="mt-20 text-center text-muted-foreground border-t border-border/50 pt-8">
-          <p>Built with React, Nextjs, Github Page & Tailwind CSS</p>
+          <p>Built with (React, Nextjs, Github Page & Tailwind CSS) Vibe coding</p>
           <p className="mt-2">© 2025 imduchuyyy. All rights reserved.</p>
         </footer>
       </main>
