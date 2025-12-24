@@ -212,7 +212,7 @@ export function ProjectsSection() {
       <div className="space-y-4">
         <h2 className="text-2xl font-bold font-mono flex items-center gap-2">
           <Star className="w-5 h-5 text-primary" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Featured Work</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Featured Side Projects</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((project) => (
@@ -222,7 +222,7 @@ export function ProjectsSection() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-bold font-mono text-muted-foreground">Other Opensource</h2>
+        <h2 className="text-xl font-bold font-mono text-muted-foreground">Other Side Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {others.map((project) => (
             <ProjectCard key={project.id} project={project} />
