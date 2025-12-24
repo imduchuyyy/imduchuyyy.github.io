@@ -3,6 +3,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export async function generateStaticParams() {
     const posts = getPostSlugs();
@@ -63,7 +65,15 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </div>
 
             <div className="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary hover:prose-a:text-primary/80 prose-code:text-primary prose-code:font-mono prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10">
-                <MDXRemote source={post.content} />
+                <MDXRemote
+                    source={post.content}
+                    options={{
+                        mdxOptions: {
+                            remarkPlugins: [remarkMath],
+                            rehypePlugins: [rehypeKatex],
+                        }
+                    }}
+                />
             </div>
         </article>
     );
