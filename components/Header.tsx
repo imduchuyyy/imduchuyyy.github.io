@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from './ui/utils';
-import { Terminal } from 'lucide-react';
 
 const items = [
   { name: 'Home', href: '/' },

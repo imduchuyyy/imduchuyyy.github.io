@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 import { ProfileSection } from '../components/ProfileSection';
-import { ProjectsSection } from '../components/ProjectsSection';
-import { ThemeToggle } from '../components/ThemeToggle';
 import Link from 'next/link';
 
 export const metadata: Metadata = {

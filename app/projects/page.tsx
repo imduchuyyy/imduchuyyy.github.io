@@ -11,7 +11,7 @@ export default function ProjectsPage() {
             <div className="max-w-2xl mx-auto text-center mb-16 space-y-4">
                 <h1 className="text-4xl font-bold font-mono">Projects</h1>
                 <p className="text-muted-foreground">
-                    Everything I've built, contributed to, or broken.
+                    Everything I&apos;ve built, contributed to, or broken.
                 </p>
             </div>
             <ProjectsSection />

@@ -1,5 +1,4 @@
 import { Github, Mail, Twitter, Linkedin, MapPin, Link2, Terminal } from 'lucide-react';
-import { Badge } from './ui/badge';
 import Image from 'next/image';
 
 export function ProfileSection() {

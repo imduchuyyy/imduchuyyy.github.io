@@ -1,14 +1,8 @@
-import { Github, Linkedin, Mail, ArrowDown, Contact, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
 export function Hero() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section

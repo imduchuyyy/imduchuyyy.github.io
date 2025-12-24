@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { Github, Star, GitFork, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Github, Star, ExternalLink, ArrowUpRight } from 'lucide-react';
 import { cn } from './ui/utils';
 
 interface Project {

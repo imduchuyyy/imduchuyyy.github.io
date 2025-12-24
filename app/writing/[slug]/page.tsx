@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: `${post.title} | imduchuyyy`,
             description: post.description,
         };
-    } catch (e) {
+    } catch {
         return {
             title: 'Post Not Found',
         };
@@ -32,7 +32,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     let post;
     try {
         post = getPostBySlug(slug);
-    } catch (e) {
+    } catch {
         notFound();
     }
 
