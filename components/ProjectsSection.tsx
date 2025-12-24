@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { Github, Star, GitFork, ExternalLink } from 'lucide-react';
+import { Github, Star, GitFork, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { cn } from './ui/utils';
 
 interface Project {
   id: number;
@@ -12,6 +13,7 @@ interface Project {
   tags: string[];
   url: string;
   homepage?: string;
+  featured?: boolean;
 }
 
 const projects: Project[] = [
@@ -25,6 +27,7 @@ const projects: Project[] = [
     language: "Solidity",
     tags: ["solidity", "account-abstraction", "passkey", "social-recovery"],
     url: "https://github.com/openpass-eth",
+    featured: true,
   },
   {
     id: 3,
@@ -48,6 +51,7 @@ const projects: Project[] = [
     tags: ["web3", "nextjs", "wagmi", "base"],
     url: "https://github.com/backmybuild",
     homepage: "https://backmybuild.com",
+    featured: true
   },
   {
     id: 10,
@@ -81,6 +85,7 @@ const projects: Project[] = [
     language: "Rust",
     tags: ["rust", "zk-snarks", "ethereum", "confidential-transaction"],
     url: "https://github.com/pendapay/confidential-transaction",
+    featured: true
   },
   {
     id: 4,
@@ -185,71 +190,115 @@ const projects: Project[] = [
   },
 ];
 
+
+// Helper to get color for language
+const getLanguageColor = (lang: string) => {
+  const colors: Record<string, string> = {
+    Solidity: "bg-blue-600",
+    Rust: "bg-orange-600",
+    Typescript: "bg-blue-500",
+    Go: "bg-cyan-500",
+    Golang: "bg-cyan-500",
+  };
+  return colors[lang] || "bg-gray-500";
+};
+
 export function ProjectsSection() {
+  const featured = projects.filter(p => p.featured);
+  const others = projects.filter(p => !p.featured);
+
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-2">
-        <h2 className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-          Open Source Projects
+    <div className="space-y-12">
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold font-mono flex items-center gap-2">
+          <Star className="w-5 h-5 text-primary" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Featured Work</span>
         </h2>
-        <p className="text-muted-foreground">
-          Some of my open source projects that I&apos;ve built and maintained.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featured.map((project) => (
+            <ProjectCard key={project.id} project={project} isFeatured />
+          ))}
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <Card key={project.id} className="flex flex-col hover:shadow-lg transition-shadow border-border/50">
-            <CardHeader>
-              <div className="flex items-start justify-between gap-2">
-                <CardTitle className="flex items-center gap-2">
-                  <Github className="w-5 h-5" />
-                  <span className="line-clamp-1">{project.name}</span>
-                </CardTitle>
-              </div>
-              <CardDescription className="line-clamp-2 min-h-[3rem]">
-                {project.description}
-              </CardDescription>
-            </CardHeader>
-
-            <CardContent className="flex-1 flex flex-col justify-between gap-4">
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <Badge key={tag} variant="outline" className="text-xs">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="flex gap-2">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 h-9 px-3 rounded-md bg-secondary hover:bg-accent transition-colors flex items-center justify-center gap-2"
-                >
-                  <Github className="w-4 h-4" />
-                  <span>Code</span>
-                </a>
-                {project.homepage && (
-                  <a
-                    href={project.homepage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 h-9 px-3 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Demo</span>
-                  </a>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold font-mono text-muted-foreground">Other Opensource</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {others.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center mt-8">
+        <a
+          href="https://github.com/imduchuyyy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-sm"
+        >
+          <span>See more on GitHub</span>
+          <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+        </a>
       </div>
     </div>
+  );
+}
+
+function ProjectCard({ project, isFeatured }: { project: Project, isFeatured?: boolean }) {
+  return (
+    <Card className={cn(
+      "flex flex-col border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-white/10 group",
+      isFeatured ? "shadow-lg shadow-primary/5 hover:shadow-primary/20" : "hover:scale-[1.01]"
+    )}>
+      <CardHeader>
+        <div className="flex items-start justify-between gap-2">
+          <CardTitle className="flex items-center gap-2 text-base font-bold tracking-tight">
+            <Github className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="group-hover:text-primary transition-colors">{project.name}</span>
+          </CardTitle>
+        </div>
+        <CardDescription className="line-clamp-2 min-h-[2.5rem] text-sm leading-relaxed">
+          {project.description}
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className="flex-1 flex flex-col justify-between gap-4 mt-auto">
+        <div className="flex flex-wrap gap-2">
+          <Badge variant="outline" className="border-white/10 bg-black/20 text-[10px] px-2 h-5 font-mono">
+            <span className={cn("w-1.5 h-1.5 rounded-full mr-1.5", getLanguageColor(project.language))} />
+            {project.language}
+          </Badge>
+          {project.tags.slice(0, 3).map(tag => (
+            <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-2 py-0.5 rounded-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-2 pt-2 border-t border-white/5">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 text-xs h-8 rounded-md bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-white/5"
+          >
+            <Github className="w-3 h-3" />
+            Code
+          </a>
+          {project.homepage && (
+            <a
+              href={project.homepage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-xs h-8 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition-colors flex items-center justify-center gap-2 border border-primary/20"
+            >
+              <ExternalLink className="w-3 h-3" />
+              Demo
+            </a>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 

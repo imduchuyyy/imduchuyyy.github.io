@@ -1,93 +1,84 @@
-import { Github, Mail, Twitter, Linkedin, MapPin, Link2 } from 'lucide-react';
+import { Github, Mail, Twitter, Linkedin, MapPin, Link2, Terminal } from 'lucide-react';
 import { Badge } from './ui/badge';
 import Image from 'next/image';
 
 export function ProfileSection() {
   return (
-    <div className="flex flex-col items-center space-y-6 mb-16">
-      {/* Avatar */}
-      <div className="relative">
-        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
-          <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-blue-400/20 to-purple-500/20 flex items-center justify-center">
-              <Image height={128} width={128} src="https://avatars.githubusercontent.com/u/53326016?v=4" alt="Avatar" className="w-28 h-28 rounded-full object-cover" />
-            </div>
+    <div className="flex flex-col items-center space-y-8 mb-20 relative">
+      {/* Decorative scanline or glow behind */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
+
+      {/* Avatar with Tech Ring */}
+      <div className="relative group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+        <div className="relative w-40 h-40 rounded-full bg-black p-1">
+          <div className="w-full h-full rounded-full overflow-hidden relative border-2 border-primary/50">
+            <Image
+              height={160}
+              width={160}
+              src="https://avatars.githubusercontent.com/u/53326016?v=4"
+              alt="Avatar"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
-        <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
-          <span className="text-lg">✨</span>
+        {/* Status Indicator */}
+        <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/80 backdrop-blur-sm border border-green-500/50 rounded-full px-3 py-1 text-xs text-green-400 shadow-[0_0_10px_rgba(74,222,128,0.5)]">
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          <span>Online</span>
         </div>
       </div>
 
       {/* Name & Title */}
-      <div className="text-center space-y-2">
-        <h1 className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-          {"imduchuyyy.eth"}
+      <div className="text-center space-y-4 max-w-2xl">
+        <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-100 to-neutral-500 font-mono tracking-tight">
+          imduchuyyy<span className="text-primary">.img</span>
         </h1>
-        <p className="text-muted-foreground">Web3 Developer & Open Source Enthusiast</p>
-        <div className="flex items-center justify-center gap-3 flex-wrap">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <MapPin className="w-4 h-4" />
-            <span>Ho Chi Minh city, VN</span>
+
+        <div className="flex items-center justify-center gap-2 text-muted-foreground font-mono text-sm md:text-base">
+          <Terminal className="w-4 h-4 text-primary" />
+          <span className="text-primary mr-2">{">"}</span>
+          <span className="typing-effect">Building the open web...</span>
+          <span className="w-2 h-4 bg-primary animate-pulse inline-block ml-1 align-middle" />
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground mt-2">
+          <div className="flex items-center gap-1.5">
+            <MapPin className="w-3 h-3" />
+            <span>Ho Chi Minh City, VN</span>
           </div>
         </div>
       </div>
 
-      {/* Bio */}
-      <p className="text-center max-w-2xl text-muted-foreground px-4">
-        Passionate about building elegant solutions to complex problems. Love contributing to open source
-        and creating tools that make developers&apos; lives easier. Always learning, always shipping.
-      </p>
-
-      {/* Skills */}
-      <div className="flex flex-wrap gap-2 justify-center px-4">
-        <Badge variant="secondary">Solidity</Badge>
-        <Badge variant="secondary">Solana - Anchor lang</Badge>
-        <Badge variant="secondary">TypeScript</Badge>
-        <Badge variant="secondary">Next.js</Badge>
-        <Badge variant="secondary">PostgreSQL</Badge>
+      {/* Skills - Tech Stack Style */}
+      <div className="flex flex-wrap gap-2 justify-center px-4 max-w-xl">
+        {['Solidity', 'Rust', 'TypeScript', 'Next.js', 'PostgreSQL', 'Solana'].map((tech) => (
+          <div key={tech} className="bg-secondary/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 text-xs font-mono px-3 py-1.5 rounded-sm transition-colors text-secondary-foreground">
+            {tech}
+          </div>
+        ))}
       </div>
 
-      {/* Social Links */}
+      {/* Social Links - Glassmorphism */}
       <div className="flex gap-4 mt-6">
-        <a
-          href="https://github.com/imduchuyyy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full bg-secondary hover:bg-accent transition-colors flex items-center justify-center"
-        >
-          <Github className="w-5 h-5" />
-        </a>
-        <a
-          href="https://x.com/imduchuyyy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full bg-secondary hover:bg-accent transition-colors flex items-center justify-center"
-        >
-          <Twitter className="w-5 h-5" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/buiduchuy2412/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full bg-secondary hover:bg-accent transition-colors flex items-center justify-center"
-        >
-          <Linkedin className="w-5 h-5" />
-        </a>
-        <a
-          href="mailto:duchuy.124dk@gmail.com"
-          className="w-12 h-12 rounded-full bg-secondary hover:bg-accent transition-colors flex items-center justify-center"
-        >
-          <Mail className="w-5 h-5" />
-        </a>
-        <a
-          href="https://imduchuyyy.xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full bg-secondary hover:bg-accent transition-colors flex items-center justify-center"
-        >
-          <Link2 className="w-5 h-5" />
-        </a>
+        {[
+          { icon: Github, href: "https://github.com/imduchuyyy" },
+          { icon: Twitter, href: "https://x.com/imduchuyyy" },
+          { icon: Linkedin, href: "https://www.linkedin.com/in/buiduchuy2412/" },
+          { icon: Mail, href: "mailto:duchuy.124dk@gmail.com" },
+          { icon: Link2, href: "https://imduchuyyy.xyz" },
+        ].map((social, idx) => (
+          <a
+            key={idx}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-lg bg-secondary/50 backdrop-blur-md border border-white/10 hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 flex items-center justify-center group"
+          >
+            <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </a>
+        ))}
       </div>
     </div>
   );

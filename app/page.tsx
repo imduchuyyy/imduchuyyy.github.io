@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { ProfileSection } from '../components/ProfileSection';
 import { ProjectsSection } from '../components/ProjectsSection';
 import { ThemeToggle } from '../components/ThemeToggle';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "imduchuyyy - Web3 Developer & Open Source Enthusiast",
@@ -54,21 +55,30 @@ export const metadata: Metadata = {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Background gradient effect */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      </div>
+    <div className="min-h-screen bg-background dark:bg-grid-white/[0.05] bg-grid-black/[0.05] relative flex flex-col items-center justify-center overflow-x-hidden">
+      {/* Radial gradient for the container to give a faded look */}
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      <main className="container mx-auto px-4 py-16 max-w-7xl">
+      <main className="container mx-auto px-4 pt-32 pb-16 max-w-7xl z-10 space-y-24">
         <ProfileSection />
-        <ProjectsSection />
-        
+
+        {/* Intro / Latest Writing Teaser */}
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-200 to-neutral-400">
+            Welcome to my digital playground.
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            I write about distributed systems, cryptography, and the future of the web.
+            Check out my <Link href="/writing" className="text-primary hover:underline">writing</Link>,
+            explore my <Link href="/projects" className="text-primary hover:underline">projects</Link>,
+            or view my <Link href="/cv" className="text-primary hover:underline">CV</Link>.
+          </p>
+        </div>
+
         {/* Footer */}
-        <footer className="mt-20 text-center text-muted-foreground border-t border-border/50 pt-8">
-          <p>Built with (React, Nextjs, Github Page & Tailwind CSS) Vibe coding</p>
-          <p className="mt-2">© 2025 imduchuyyy. All rights reserved.</p>
+        <footer className="mt-20 text-center text-muted-foreground border-t border-border/50 pt-8 text-sm">
+          <p>Built with Next.js, Tailwind CSS & Magic</p>
+          <p className="mt-2 text-xs">© 2025 imduchuyyy. All rights reserved.</p>
         </footer>
       </main>
     </div>
