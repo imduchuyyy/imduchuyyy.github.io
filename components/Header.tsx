@@ -7,7 +7,7 @@ import { cn } from './ui/utils';
 const items = [
   { name: 'Home', href: '/' },
   { name: 'Writing', href: '/writing' },
-  { name: 'Projects', href: '/projects' },
+  { name: 'Contributions', href: '/contributions' },
   { name: 'CV', href: '/cv' },
 ];
 

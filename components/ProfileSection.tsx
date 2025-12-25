@@ -1,5 +1,6 @@
 import { Github, Mail, Twitter, Linkedin, MapPin, Link2, Terminal } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function ProfileSection() {
   return (
@@ -32,13 +33,13 @@ export function ProfileSection() {
       {/* Name & Title */}
       <div className="text-center space-y-4 max-w-2xl">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-100 to-neutral-500 font-mono tracking-tight">
-          imduchuyyy<span className="text-primary">.img</span>
+          imduchuyyy<span className="text-primary">.eth</span>
         </h1>
 
         <div className="flex items-center justify-center gap-2 text-muted-foreground font-mono text-sm md:text-base">
           <Terminal className="w-4 h-4 text-primary" />
           <span className="text-primary mr-2">{">"}</span>
-          <span className="typing-effect">Building the open web...</span>
+          <span className="typing-effect">Building the open internet...</span>
           <span className="w-2 h-4 bg-primary animate-pulse inline-block ml-1 align-middle" />
         </div>
 
@@ -49,16 +50,6 @@ export function ProfileSection() {
           </div>
         </div>
       </div>
-
-      {/* Skills - Tech Stack Style */}
-      <div className="flex flex-wrap gap-2 justify-center px-4 max-w-xl">
-        {['Solidity', 'Rust', 'TypeScript', 'Next.js', 'PostgreSQL', 'Solana'].map((tech) => (
-          <div key={tech} className="bg-secondary/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 text-xs font-mono px-3 py-1.5 rounded-sm transition-colors text-secondary-foreground">
-            {tech}
-          </div>
-        ))}
-      </div>
-
       {/* Social Links - Glassmorphism */}
       <div className="flex gap-4 mt-6">
         {[

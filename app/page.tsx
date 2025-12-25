@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { ProfileSection } from '../components/ProfileSection';
+import { FadeIn } from '@/components/FadeIn';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -58,26 +59,9 @@ export default function App() {
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
       <main className="container mx-auto px-4 pt-32 pb-16 max-w-7xl z-10 space-y-24">
-        <ProfileSection />
-
-        {/* Intro / Latest Writing Teaser */}
-        <div className="max-w-2xl mx-auto text-center space-y-6">
-          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-200 to-neutral-400">
-            Welcome to my digital playground.
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            I write about distributed systems, cryptography, and the future of the web.
-            Check out my <Link href="/writing" className="text-primary hover:underline">writing</Link>,
-            explore my <Link href="/projects" className="text-primary hover:underline">projects</Link>,
-            or view my <Link href="/cv" className="text-primary hover:underline">CV</Link>.
-          </p>
-        </div>
-
-        {/* Footer */}
-        <footer className="mt-20 text-center text-muted-foreground border-t border-border/50 pt-8 text-sm">
-          <p>Built with Next.js, Tailwind CSS & Magic</p>
-          <p className="mt-2 text-xs">© 2025 imduchuyyy. All rights reserved.</p>
-        </footer>
+        <FadeIn>
+          <ProfileSection />
+        </FadeIn>
       </main>
     </div>
   );
