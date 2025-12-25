@@ -54,9 +54,9 @@ export const metadata: Metadata = {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background dark:bg-grid-white/[0.05] bg-grid-black/[0.05] relative flex flex-col items-center justify-center overflow-x-hidden">
+    <div className="min-h-screen relative flex flex-col items-center justify-center overflow-x-hidden">
       {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
       <main className="container mx-auto px-4 pt-32 pb-16 max-w-7xl z-10 space-y-24">
         <FadeIn>

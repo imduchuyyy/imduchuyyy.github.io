@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 };
 
 import { Header } from "@/components/Header";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="min-h-screen font-mono tracking-tight selection:bg-primary selection:text-primary-foreground">
+        <AnimatedBackground />
         <Header />
         <main>{children}</main>
       </body>
