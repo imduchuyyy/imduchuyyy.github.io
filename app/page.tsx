@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { ProfileSection } from '../components/ProfileSection';
+import { FadeIn } from '@/components/FadeIn';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -58,7 +59,9 @@ export default function App() {
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-background bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
       <main className="container mx-auto px-4 pt-32 pb-16 max-w-7xl z-10 space-y-24">
-        <ProfileSection />
+        <FadeIn>
+          <ProfileSection />
+        </FadeIn>
       </main>
     </div>
   );
