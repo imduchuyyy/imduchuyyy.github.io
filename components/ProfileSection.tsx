@@ -51,13 +51,13 @@ export function ProfileSection() {
         </div>
       </div>
       {/* Social Links - Glassmorphism */}
-      <div className="flex gap-4 mt-6">
+      <div className="flex justify-center gap-4 mt-6">
         {[
           { icon: Github, href: "https://github.com/imduchuyyy" },
           { icon: Twitter, href: "https://x.com/imduchuyyy" },
           { icon: Linkedin, href: "https://www.linkedin.com/in/buiduchuy2412/" },
           { icon: Mail, href: "mailto:duchuy.124dk@gmail.com" },
-          { icon: Link2, href: "https://imduchuyyy.xyz" },
+          { icon: Link2, href: "https://imduchuyyy.github.io" },
         ].map((social, idx) => (
           <a
             key={idx}
