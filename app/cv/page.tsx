@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, Code2, Calendar } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
+import Link from "next/link";
 
 export const metadata = {
     title: "CV | imduchuyyy",
@@ -46,9 +47,9 @@ export default function CVPage() {
                                     </div>
                                 </div>
                                 <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-primary/50">
-                                    <li>Led a high-performing blockchain team to deliver innovative solutions.</li>
-                                    <li>Cultivated partnerships with key stakeholders, boosting project visibility.</li>
-                                    <li>Championed a culture of innovation, leading to 3 successful product launches.</li>
+                                    <li>Lead team with 4 members, design and develop high quality crypto projects. (<Link href="https://dagora.xyz" className="underline">dagora.xyz</Link>, <Link href="https://victionchain.com" className="underline">victionchain</Link>, <Link href="https://saros.xyz" className="underline">saros.xyz</Link>, <Link href="https://saros.xyz/dlmm" className="underline">dlmm.saros.xyz</Link>, <Link href="https://eternals.game" className="underline">eternals.game</Link>...)</li>
+                                    <li>Collaborated with cross-functional teams to enhance product features.</li>
+                                    <li>Championed a culture of innovation, leading to successful product launches.</li>
                                 </ul>
                             </Card>
 
