@@ -46,11 +46,29 @@ export default function CVPage() {
                                         <span>Dec 2023 — Current</span>
                                     </div>
                                 </div>
-                                <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-primary/50">
-                                    <li>Lead team with 4 members, design and develop high quality crypto projects. (<Link href="https://dagora.xyz" className="underline">dagora.xyz</Link>, <Link href="https://victionchain.com" className="underline">victionchain</Link>, <Link href="https://saros.xyz" className="underline">saros.xyz</Link>, <Link href="https://saros.xyz/dlmm" className="underline">dlmm.saros.xyz</Link>, <Link href="https://eternals.game" className="underline">eternals.game</Link>...)</li>
-                                    <li>Collaborated with cross-functional teams to enhance product features.</li>
-                                    <li>Championed a culture of innovation, leading to successful product launches.</li>
-                                </ul>
+                                <div className="space-y-4">
+                                    <p className="text-muted-foreground">
+                                        Lead the team building smart contracts and protocols for multiple successful projects:
+                                    </p>
+                                    <ul className="space-y-3 text-muted-foreground list-disc list-inside marker:text-primary/50">
+                                        <li>
+                                            <Link href="https://saros.xyz" className="text-white hover:text-primary transition-colors font-medium">Saros.xyz</Link> (Leading liquidity layer on Solana):
+                                            Authorized over 50m TVL and nearly 1b trading volume. Built core protocol and SDK for partner interaction.
+                                        </li>
+                                        <li>
+                                            <Link href="https://dagora.xyz" className="text-white hover:text-primary transition-colors font-medium">Dagora.xyz</Link> (Multichain NFT marketplace):
+                                            Designed and built core protocol, achieved multi-million trading volume, and successfully launched nearly 200 launchpads.
+                                        </li>
+                                        <li>
+                                            <Link href="https://viction.xyz" className="text-white hover:text-primary transition-colors font-medium">Victionchain</Link> (Blockchain Layer 1):
+                                            Contributed to Victionchain to improve Sponsor transaction mechanism. Introduced new standard VRC25 to help projects sponsor gas for their users.
+                                        </li>
+                                        <li>
+                                            <Link href="https://eternals.game" className="text-white hover:text-primary transition-colors font-medium">Eternals Game</Link> (Gaming on Viction):
+                                            Built the core protocol for Eternals game.
+                                        </li>
+                                    </ul>
+                                </div>
                             </Card>
 
                             <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
@@ -64,10 +82,15 @@ export default function CVPage() {
                                         <span>Nov 2021 — Dec 2023</span>
                                     </div>
                                 </div>
-                                <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-primary/50">
-                                    <li>Pioneered innovative blockchain solutions, boosting efficiency.</li>
-                                    <li>Conducted in-depth research, leading to successful project implementations.</li>
-                                    <li>Collaborated with cross-functional teams to enhance product features.</li>
+                                <ul className="space-y-3 text-muted-foreground list-disc list-inside marker:text-primary/50">
+                                    <li>
+                                        <span className="text-white font-medium">OneId</span> (World first multichain name service):
+                                        Built and maintained core protocol for OneID.
+                                    </li>
+                                    <li>
+                                        <span className="text-white font-medium">Baryon</span> (Multichain suite of DeFi products):
+                                        Built and maintained core products on Baryon (AMM, staking).
+                                    </li>
                                 </ul>
                             </Card>
 
