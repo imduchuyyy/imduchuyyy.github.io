@@ -77,7 +77,7 @@ export default function CVPage() {
                             <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                                     <div>
-                                        <h3 className="text-xl font-bold text-primary">Blockchain Researcher</h3>
+                                        <h3 className="text-xl font-bold text-primary">Blockchain Engineer</h3>
                                         <p className="text-lg font-medium text-white/90">Ninety Eight - Viet Nam</p>
                                     </div>
                                     <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-white/5 px-3 py-1 rounded-full">
@@ -100,7 +100,7 @@ export default function CVPage() {
                             <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                                     <div>
-                                        <h3 className="text-xl font-bold text-primary">Blockchain Researcher Intern</h3>
+                                        <h3 className="text-xl font-bold text-primary">Blockchain Engineer Intern</h3>
                                         <p className="text-lg font-medium text-white/90">Vietnam Blockchain Corporation - Viet Nam</p>
                                     </div>
                                     <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-white/5 px-3 py-1 rounded-full">
@@ -117,7 +117,7 @@ export default function CVPage() {
                             <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                                     <div>
-                                        <h3 className="text-xl font-bold text-primary">Frontend Intern</h3>
+                                        <h3 className="text-xl font-bold text-primary">Frontend Engineer Intern</h3>
                                         <p className="text-lg font-medium text-white/90">Acexis</p>
                                     </div>
                                     <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-white/5 px-3 py-1 rounded-full">
