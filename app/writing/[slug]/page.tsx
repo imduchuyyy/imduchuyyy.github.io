@@ -20,10 +20,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return {
             title: `${post.title} | imduchuyyy`,
             description: post.description,
+            icons: {
+                icon: "https://euc.li/imduchuyyy.eth",
+            },
         };
     } catch {
         return {
             title: 'Post Not Found',
+            icons: {
+                icon: "https://euc.li/imduchuyyy.eth",
+            },
         };
     }
 }

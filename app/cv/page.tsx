@@ -7,6 +7,9 @@ import Link from "next/link";
 export const metadata = {
     title: "CV | imduchuyyy",
     description: "My professional experience and skills.",
+    icons: {
+        icon: "https://euc.li/imduchuyyy.eth",
+    },
 };
 
 export default function CVPage() {

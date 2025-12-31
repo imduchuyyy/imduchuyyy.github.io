@@ -5,6 +5,9 @@ import { FadeIn } from '@/components/FadeIn';
 export const metadata = {
     title: "Writing | imduchuyyy",
     description: "Thoughts on software engineering, web3, and life.",
+    icons: {
+        icon: "https://euc.li/imduchuyyy.eth",
+    },
 };
 
 export default function WritingPage() {

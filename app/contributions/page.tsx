@@ -4,6 +4,9 @@ import { FadeIn } from '@/components/FadeIn';
 export const metadata = {
     title: "Contributions | imduchuyyy",
     description: "A showcase of my open source contributions.",
+    icons: {
+        icon: "https://euc.li/imduchuyyy.eth",
+    },
 };
 
 export default function ContributionsPage() {
