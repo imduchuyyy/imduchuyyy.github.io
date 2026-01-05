@@ -21,10 +21,10 @@ export default function App() {
           <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
             <p>
               My name is Huy. I&apos;m a Blockchain Engineer with a passion for building decentralized applications
-              and tooling that empowers users. I&apos;m currently working as a Technical Leader at <Link href="https://ne.xyz" target="_blank" className="text-foreground border-b border-foreground/20">Ninety Eight</Link>.
+              and tooling that empowers users. I&apos;m currently working as a Technical Leader at <Link href="https://ne.xyz" target="_blank" className="text-foreground underline">Ninety Eight</Link>.
             </p>
             <p>
-              In my spare time, I contribute to <Link href="/contributions" className="text-foreground border-b border-foreground/20">open source projects</Link> and write about <Link href="/writing" className="text-foreground border-b border-foreground/20">my learnings</Link> in the crypto space.
+              In my spare time, I contribute to <Link href="/contributions" className="text-foreground underline">open source projects</Link> and write about <Link href="/writing" className="text-foreground underline">my learnings</Link> in the crypto space.
             </p>
           </div>
 
