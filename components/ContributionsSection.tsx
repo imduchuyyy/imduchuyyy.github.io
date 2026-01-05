@@ -17,6 +17,18 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 2,
+    name: "minicache",
+    description:
+      "Production-ready caching server in under 1000 lines of rust.",
+    stars: 85,
+    forks: 10,
+    language: "Rust",
+    tags: ["rust", "cache", "server", "linked-list"],
+    url: "https://github.com/imduchuyyy/minicache",
+    featured: true
+  },
+  {
     id: 6,
     name: "openpass-eth",
     description:
@@ -74,17 +86,6 @@ const projects: Project[] = [
     language: "Solidity",
     tags: ["solidity", "nft", "marketplace", "onchain"],
     url: "https://github.com/imduchuyyy/fully-onchain-marketplace",
-  },
-  {
-    id: 2,
-    name: "minicache",
-    description:
-      "Production-ready caching server in under 100 lines of rust.",
-    stars: 85,
-    forks: 10,
-    language: "Rust",
-    tags: ["rust", "cache", "server", "linked-list"],
-    url: "https://github.com/imduchuyyy/minicache",
   },
   {
     id: 11,
