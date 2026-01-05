@@ -20,7 +20,7 @@ const projects: Project[] = [
     id: 2,
     name: "minicache",
     description:
-      "Production-ready caching server in under 1000 lines of rust.",
+      "Production-ready caching server in under 1000 lines of code.",
     stars: 85,
     forks: 10,
     language: "Rust",
