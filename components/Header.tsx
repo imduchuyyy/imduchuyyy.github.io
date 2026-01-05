@@ -7,14 +7,16 @@ import Image from 'next/image';
 
 const items = [
   { name: 'Home', href: '/' },
-  { name: 'Writing', href: '/writing' },
-  { name: 'Contributions', href: '/contributions' },
-  { name: 'CV', href: '/cv' },
+  { name: 'Writing', href: '/writing/' },
+  { name: 'Contributions', href: '/contributions/' },
+  { name: 'CV', href: '/cv/' },
   // { name: 'Projects', href: '/projects' },
 ];
 
 export function Header() {
   const pathname = usePathname();
+
+
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 pt-8 pb-4">
@@ -36,7 +38,9 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "hover:text-foreground hover:underline underline-offset-4 transition-all",
-                    pathname === item.href ? "text-foreground font-semibold" : ""
+                    (item.href === '/' ? pathname === '/' : pathname.startsWith(item.href))
+                      ? "text-foreground font-semibold underline"
+                      : ""
                   )}
                 >
                   {item.name}
