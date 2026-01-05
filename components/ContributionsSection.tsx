@@ -1,7 +1,6 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
 import { Github, Star, ExternalLink, ArrowUpRight } from 'lucide-react';
 import { cn } from './ui/utils';
+import Link from 'next/link';
 
 interface Project {
   id: number;
@@ -21,7 +20,7 @@ const projects: Project[] = [
     id: 6,
     name: "openpass-eth",
     description:
-      "An experimental Ethereum wallet that leverages Account Abstraction (EIP-4337 and EIP-7702) to provide a seamless and secure user experience without the need for traditional private keys.",
+      "An experimental Ethereum wallet leveraging Account Abstraction.",
     stars: 70,
     forks: 8,
     language: "Solidity",
@@ -33,7 +32,7 @@ const projects: Project[] = [
     id: 3,
     name: "p-amm",
     description:
-      "A cheapest implementation of constant product AMM built on top of Solana using Pinocchio for zero-dependencies architecture.",
+      "Minimal constant product AMM on Solana using Pinocchio.",
     stars: 210,
     forks: 25,
     language: "Rust",
@@ -42,9 +41,9 @@ const projects: Project[] = [
   },
   {
     id: 1,
-    name: "BackMyBuild",
+    name: "backmybuild",
     description:
-      "A crypto-native creator funding platform where builders can receive tips in any token, any chain — without setup. Features onchain profile links, stealth addresses, and $USDC balance capture on Base.",
+      "Using stealth-address to hide creator's wallet address.",
     stars: 120,
     forks: 15,
     language: "Solidity",
@@ -54,10 +53,22 @@ const projects: Project[] = [
     featured: true
   },
   {
-    id: 10,
-    name: "Fully onchain marketplace",
+    id: 4,
+    name: "sol-ver",
     description:
-      "A fully onchain NFT marketplace",
+      "Intent-based trading platform on Solana (Pinocchio) (WIP).",
+    stars: 120,
+    forks: 15,
+    language: "Rust",
+    tags: ["solana", "amm", "pinocchio"],
+    url: "https://github.com/sol-ver/program",
+    featured: true
+  },
+  {
+    id: 10,
+    name: "fully-onchain-marketplace",
+    description:
+      "A fully onchain NFT marketplace.",
     stars: 120,
     forks: 15,
     language: "Solidity",
@@ -66,9 +77,9 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    name: "Minicache",
+    name: "minicache",
     description:
-      "Your production-ready caching server with under 100 lines of code.",
+      "Production-ready caching server in under 100 lines of rust.",
     stars: 85,
     forks: 10,
     language: "Rust",
@@ -79,7 +90,7 @@ const projects: Project[] = [
     id: 11,
     name: "confidential-transaction",
     description:
-      "A confidential transaction implementation built on top of Ethereum using zk-SNARKs.",
+      "Confidential transaction implementation using zk-SNARKs.",
     stars: 85,
     forks: 10,
     language: "Rust",
@@ -89,9 +100,9 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    name: "Tokenight",
+    name: "tokenight",
     description:
-      "An AI agent that let people can create token with just a tweet.",
+      "AI agent to create tokens with just a tweet.",
     stars: 60,
     forks: 5,
     language: "Typescript",
@@ -102,7 +113,7 @@ const projects: Project[] = [
     id: 12,
     name: "crypt-env",
     description:
-      "Secure environment manager with profile-based encrypted storage.",
+      "Secure environment manager with encrypted storage.",
     stars: 60,
     forks: 5,
     language: "Typescript",
@@ -114,7 +125,7 @@ const projects: Project[] = [
     id: 13,
     name: "create-viction-dapp",
     description:
-      "A CLI tool to create Viction dapps. Inspired by create-onchain (base).",
+      "CLI tool to scaffold Viction dapps.",
     stars: 60,
     forks: 5,
     language: "Typescript",
@@ -123,9 +134,9 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    name: "Lucci AI",
+    name: "lucci-agent",
     description:
-      "Analyzes news and rewrite them into Vietnamese, then automatically post to Telegram channel.",
+      "News analysis and automated Telegram posting bot.",
     stars: 60,
     forks: 5,
     language: "Go",
@@ -137,7 +148,7 @@ const projects: Project[] = [
     id: 16,
     name: "base/webauthn-sol",
     description:
-      "I contributed to base/webauthn-sol by fixing the issue where the libirary can't verify passkey signature.",
+      "Fix passkey signature verification in webauthn-sol library.",
     stars: 38,
     forks: 4,
     language: "Solidity",
@@ -146,9 +157,9 @@ const projects: Project[] = [
   },
   {
     id: 17,
-    name: "Saros-swap",
+    name: "saros-swap",
     description:
-      "I contributed to Saros-swap by adding support swap-exact-out function.",
+      "Add swap-exact-out support to Saros swap AMM.",
     stars: 38,
     forks: 4,
     language: "Rust",
@@ -159,7 +170,7 @@ const projects: Project[] = [
     id: 18,
     name: "ignite/cli",
     description:
-      "I contributed to ignite/cli by adding support for NFT module in Cosmos SDK.",
+      "Add NFT module support to Cosmos SDK ignite CLI.",
     stars: 38,
     forks: 4,
     language: "Go",
@@ -168,9 +179,9 @@ const projects: Project[] = [
   },
   {
     id: 19,
-    name: "Viction Chain",
+    name: "buildonviction/victionchain",
     description:
-      "I contributed to Viction Chain by adding support for upgrade VRC-25 feature.",
+      "Support VRC-25 upgrade feature in Viction Chain.",
     stars: 38,
     forks: 4,
     language: "Golang",
@@ -179,9 +190,9 @@ const projects: Project[] = [
   },
   {
     id: 20,
-    name: "Vault NEAR",
+    name: "vault-near",
     description:
-      "Simple implementation smart contract on NEAR to let user distribute token to multiple recipients.",
+      "Token distribution smart contract on NEAR.",
     stars: 38,
     forks: 4,
     language: "Rust",
@@ -190,115 +201,69 @@ const projects: Project[] = [
   },
 ];
 
-
-// Helper to get color for language
-const getLanguageColor = (lang: string) => {
-  const colors: Record<string, string> = {
-    Solidity: "bg-blue-600",
-    Rust: "bg-orange-600",
-    Typescript: "bg-blue-500",
-    Go: "bg-cyan-500",
-    Golang: "bg-cyan-500",
-  };
-  return colors[lang] || "bg-gray-500";
-};
-
 export function ContributionsSection() {
-  const featured = projects.filter(p => p.featured);
   const others = projects.filter(p => !p.featured);
 
   return (
     <div className="space-y-12">
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold font-mono flex items-center gap-2">
-          <Star className="w-5 h-5 text-primary" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Featured</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featured.map((project) => (
-            <ProjectCard key={project.id} project={project} isFeatured />
-          ))}
-        </div>
-      </div>
+      <FeaturedProjects />
 
       <div className="space-y-4">
-        <h2 className="text-xl font-bold font-mono text-muted-foreground">Side</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <h2 className="text-xl font-bold font-mono text-muted-foreground">Other Projects</h2>
+        <div className="flex flex-col space-y-4">
           {others.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectRow key={project.id} project={project} />
           ))}
         </div>
       </div>
       <div className="flex justify-center mt-8">
-        <a
+        <Link
           href="https://github.com/imduchuyyy"
           target="_blank"
-          rel="noopener noreferrer"
           className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-sm"
         >
           <span>See more on GitHub</span>
           <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-        </a>
+        </Link>
       </div>
     </div>
   );
 }
 
-function ProjectCard({ project, isFeatured }: { project: Project, isFeatured?: boolean }) {
+export function FeaturedProjects({ withHeader = true }: { withHeader?: boolean }) {
+  const featured = projects.filter(p => p.featured);
+
   return (
-    <Card className={cn(
-      "flex flex-col border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-white/10 group",
-      isFeatured ? "shadow-lg shadow-primary/5 hover:shadow-primary/20" : "hover:scale-[1.01]"
-    )}>
-      <CardHeader>
-        <div className="flex items-start justify-between gap-2">
-          <CardTitle className="flex items-center gap-2 text-base font-bold tracking-tight">
-            <Github className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="group-hover:text-primary transition-colors">{project.name}</span>
-          </CardTitle>
-        </div>
-        <CardDescription className="line-clamp-2 min-h-[2.5rem] text-sm leading-relaxed">
-          {project.description}
-        </CardDescription>
-      </CardHeader>
+    <div className="space-y-4">
+      {withHeader && (
+        <h2 className="text-2xl font-bold font-mono flex items-center gap-2">
+          <Star className="w-5 h-5 text-primary" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Featured</span>
+        </h2>
+      )}
+      <div className="flex flex-col space-y-4">
+        {featured.map((project) => (
+          <ProjectRow key={project.id} project={project} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
-      <CardContent className="flex-1 flex flex-col justify-between gap-4 mt-auto">
-        <div className="flex flex-wrap gap-2">
-          <Badge variant="outline" className="border-white/10 bg-black/20 text-[10px] px-2 h-5 font-mono">
-            <span className={cn("w-1.5 h-1.5 rounded-full mr-1.5", getLanguageColor(project.language))} />
-            {project.language}
-          </Badge>
-          {project.tags.slice(0, 3).map(tag => (
-            <span key={tag} className="text-[10px] text-muted-foreground bg-white/5 px-2 py-0.5 rounded-sm">
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div className="flex gap-2 pt-2 border-t border-white/5">
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 text-xs h-8 rounded-md bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-white/5"
-          >
-            <Github className="w-3 h-3" />
-            Code
-          </a>
-          {project.homepage && (
-            <a
-              href={project.homepage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-xs h-8 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition-colors flex items-center justify-center gap-2 border border-primary/20"
-            >
-              <ExternalLink className="w-3 h-3" />
-              Demo
-            </a>
-          )}
-        </div>
-      </CardContent>
-    </Card>
+function ProjectRow({ project }: { project: Project }) {
+  return (
+    <Link
+      href={project.url}
+      target="_blank"
+      className="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 hover:opacity-100 opacity-90 transition-opacity"
+    >
+      <span className="w-48 text-foreground/90 font-medium shrink-0 group-hover:underline decoration-1 underline-offset-4 transition-all">
+        {project.name}
+      </span>
+      <span className="text-sm text-muted-foreground line-clamp-1">
+        {project.description}
+      </span>
+    </Link>
   );
 }
 

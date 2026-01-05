@@ -29,27 +29,6 @@
   --radius-lg: var(--radius);
 }
 
-@theme {
-  --animate-tilt: tilt 10s infinite linear;
-
-  @keyframes tilt {
-
-    0%,
-    50%,
-    100% {
-      transform: rotate(0deg);
-    }
-
-    25% {
-      transform: rotate(0.5deg);
-    }
-
-    75% {
-      transform: rotate(-0.5deg);
-    }
-  }
-}
-
 :root {
   --background: #ffffff;
   --foreground: #09090b;
@@ -74,28 +53,25 @@
 }
 
 .dark {
-  --background: #030014;
-  /* Deep space blue/black */
-  --foreground: #fafafa;
-  --card: #0a0a16;
-  /* Slightly lighter than background */
-  --card-foreground: #fafafa;
-  --popover: #030014;
-  --popover-foreground: #fafafa;
-  --primary: #6366f1;
-  /* Indigo-500 */
-  --primary-foreground: #fafafa;
-  --secondary: #1e1e2e;
+  --background: #111111; /* Pitch black or very dark grey */
+  --foreground: #eeeeee;
+  --card: #111111;
+  --card-foreground: #eeeeee;
+  --popover: #111111;
+  --popover-foreground: #eeeeee;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #27272a;
   --secondary-foreground: #fafafa;
-  --muted: #1e1e2e;
+  --muted: #27272a;
   --muted-foreground: #a1a1aa;
-  --accent: #1e1e2e;
+  --accent: #27272a;
   --accent-foreground: #fafafa;
   --destructive: #7f1d1d;
   --destructive-foreground: #fafafa;
-  --border: #1f2937;
-  --input: #1f2937;
-  --ring: #6366f1;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #ffffff;
 }
 
 @layer base {
@@ -105,21 +81,5 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-}
-
-/* Tech Vibe Utilities */
-@layer utilities {
-  .text-glow {
-    text-shadow: 0 0 10px theme('colors.primary.DEFAULT');
-  }
-
-  .bg-grid-white {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
-  }
-
-  .bg-grid-black {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
   }
 }

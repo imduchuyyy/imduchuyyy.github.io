@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function ContributionsPage() {
     return (
-        <div className="container mx-auto px-4 py-32 max-w-7xl">
+        <div className="min-h-screen pt-32 md:pt-48 pb-16 px-6 md:px-12 lg:px-24 max-w-4xl mx-auto">
             <FadeIn>
-                <div className="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <div className="mb-16 space-y-4">
                     <h1 className="text-4xl font-bold font-mono">Contributions</h1>
                     <p className="text-muted-foreground">
                         Everything I&apos;ve built or contributed to.

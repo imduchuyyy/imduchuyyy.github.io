@@ -14,9 +14,9 @@ export const metadata = {
 
 export default function CVPage() {
     return (
-        <div className="container mx-auto px-4 py-32 max-w-4xl">
+        <div className="min-h-screen pt-32 md:pt-48 pb-16 px-6 md:px-12 lg:px-24 max-w-4xl mx-auto">
             <FadeIn>
-                <div className="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <div className="mb-16 space-y-4">
                     <h1 className="text-4xl font-bold font-mono">Curriculum Vitae</h1>
                     <p className="text-muted-foreground">
                         My professional journey and technical expertise.
@@ -41,7 +41,7 @@ export default function CVPage() {
                             <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                                     <div>
-                                        <h3 className="text-xl font-bold text-primary">Blockchain Team Leader</h3>
+                                        <h3 className="text-xl font-bold text-primary">Technical Leader</h3>
                                         <p className="text-lg font-medium text-white/90">Ninety Eight - Viet Nam</p>
                                     </div>
                                     <div className="flex items-center gap-2 text-sm font-mono text-muted-foreground bg-white/5 px-3 py-1 rounded-full">
