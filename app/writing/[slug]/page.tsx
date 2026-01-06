@@ -4,7 +4,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import remarkMath from 'remark-math';
+import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 export async function generateStaticParams() {
     const posts = getPostSlugs();
@@ -75,8 +77,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     source={post.content}
                     options={{
                         mdxOptions: {
-                            remarkPlugins: [remarkMath],
-                            rehypePlugins: [rehypeKatex],
+                            remarkPlugins: [remarkMath, remarkGfm],
+                            rehypePlugins: [
+                                rehypeKatex,
+                                [rehypePrettyCode, {
+                                    theme: 'github-dark',
+                                    keepBackground: true,
+                                }]
+                            ],
                         }
                     }}
                 />
