@@ -8,7 +8,7 @@ export const metadata = {
     title: "CV | imduchuyyy",
     description: "My professional experience and skills.",
     icons: {
-        icon: "https://euc.li/imduchuyyy.eth",
+        icon: "https://avatars.githubusercontent.com/u/53326016?v=6",
     },
 };
 

@@ -5,7 +5,7 @@ export const metadata = {
     title: "Contributions | imduchuyyy",
     description: "A showcase of my open source contributions.",
     icons: {
-        icon: "https://euc.li/imduchuyyy.eth",
+        icon: "https://avatars.githubusercontent.com/u/53326016?v=6",
     },
 };
 

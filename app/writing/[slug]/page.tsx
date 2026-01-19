@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: `${post.title} | imduchuyyy`,
             description: post.description,
             icons: {
-                icon: "https://euc.li/imduchuyyy.eth",
+                icon: "https://avatars.githubusercontent.com/u/53326016?v=6",
             },
         };
     } catch {
         return {
             title: 'Post Not Found',
             icons: {
-                icon: "https://euc.li/imduchuyyy.eth",
+                icon: "https://avatars.githubusercontent.com/u/53326016?v=6",
             },
         };
     }

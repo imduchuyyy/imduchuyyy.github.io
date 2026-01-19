@@ -16,7 +16,7 @@ export function ProfileSection() {
             <Image
               height={160}
               width={160}
-              src="https://avatars.githubusercontent.com/u/53326016?v=4"
+              src="https://avatars.githubusercontent.com/u/53326016?v=6"
               alt="Avatar"
               className="object-cover"
               priority

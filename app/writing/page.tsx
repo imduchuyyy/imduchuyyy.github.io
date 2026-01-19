@@ -6,7 +6,7 @@ export const metadata = {
     title: "Writing | imduchuyyy",
     description: "Thoughts on software engineering, web3, and life.",
     icons: {
-        icon: "https://euc.li/imduchuyyy.eth",
+        icon: "https://avatars.githubusercontent.com/u/53326016?v=6",
     },
 };
 
