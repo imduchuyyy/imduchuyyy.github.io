@@ -1,0 +1,106 @@
+---
+title: "How AI agent works"
+date: "2026-04-28"
+description: "How AI agent works"
+tags: ["AI", "future", "technology"]
+---
+
+It has been six years since the release of ChatGPT, and the AI world has seen immense changes. 
+We have moved from the initial version of ChatGPT—where you could only ask questions and receive answers—to powerful agents that can perform tasks for you, such as writing code, sending emails, and creating presentations.
+
+The first time I used an AI coding agent, I was amazed by its ability to understand my requests, navigate my codebase, and implement changes. 
+Driven by an inquiring mind, I wanted to understand how it works from a technical perspective. Here is what I discovered.
+
+This blog does not require a technical background; I will do my best to explain these concepts so that everyone can understand.
+
+## From text-to-text
+Most LLMs (Large Language Models) like GPT, Claude (Opus), and Gemini are text-to-text models. 
+This means they are designed to take text as an input and provide text as an output.
+
+```
+You: Hello
+LLM: Hi, how can I help you?
+```
+
+So, how can an LLM perform actions like this?
+
+```
+You: Hey, send mail to imduchuyyy@gmail.com, tell him don't forget to write new blog about AI agent.
+LLM: ...
+```
+
+## To text-to-action
+
+This is where the `agent` come in. Fundamentally, an agent is software that wraps around the LLM. The agent's job is to translate a user's request into a structured format containing specific actions. It sends this to the LLM, receives the response, and then executes the code associated with that action.
+
+Let me give you a very simple example to illustrate how it works, Let's say you want to have an agent to help you send email.
+
+If just send message to the LLM like this:
+```
+You: Hey, send mail to imduchuyyy@gmail.com, tell him don't forget to write new blog about AI agent.
+LLM: (All the thing LLM can do is just generate text base on what you provide, so it will give you something like this) 
+Sure, here is the email you can send to your co-workers.....
+```
+
+How the Agent Intervenes?
+
+Instead of sending your message directly, the agent wraps your request with instructions (a prompt) that guide the LLM to respond in a specific format (like JSON) that a computer can understand.
+
+```
+You will recevie a request from user. 
+Your task is to understand the user request and then translate it into a structured format with specific action and parameters. 
+The structured format should be in JSON format and should include the action you want to perform and the parameters needed for that action.
+
+1. Send an email: to send an email, just response with the following format:
+{
+  "action": "send_email",
+  "parameters": {
+    "recipients": ["email1", "email2", ...],
+    "subject": "email subject",
+    "body": "email body"
+  }
+}
+
+2. Read an email: to read an email, just response with the following format:
+{
+  "action": "read_email",
+  "parameters": {
+    "email_id": "email id"
+  }
+}
+
+3. Other action: if you want to perform other action, just response with the following format:
+{
+  "action": "other_action",
+  "parameters": {
+    // parameters needed for the action
+  }
+}
+
+Here is the user message: Hey, send mail to imduchuyyy@gmail.com, tell him don't forget to write new blog about AI agent.
+
+ONLY response with the JSON format, do not include any other text or explanation.
+```
+
+And then agent will pass this message to the LLM. The LLM can understand the instruction and response something like this:
+
+```
+{
+  "action": "send_email",
+  "parameters": {
+    "recipients": ["imduchuyyy@gmail.com"],
+    "subject": "Reminder: Write new blog about AI agent",
+    "body": "Hi, just a reminder to write a new blog about AI agent. Don't forget to share it with everyone once it's done. Thanks!"
+  }
+}
+```
+
+The agent's code parses this JSON and automatically triggers an Email API to send the message.
+
+## Summary
+
+Essentially, an AI agent acts as a translator between natural language and computer language. It allows the computer to understand your intent and execute real-world actions.
+
+This is a simplified look at the process. In reality, agents can be far more complex. I will share more about the evolving world of AI agents in upcoming posts, so stay tuned!
+
+
