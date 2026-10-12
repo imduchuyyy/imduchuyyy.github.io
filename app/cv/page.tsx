@@ -21,6 +21,9 @@ export default function CVPage() {
                     <p className="text-muted-foreground">
                         My professional journey and technical expertise.
                     </p>
+                    <a href="/cv.pdf" download className="inline-block text-sm font-mono text-foreground underline underline-offset-4">
+                        Download PDF
+                    </a>
                 </div>
             </FadeIn>
 
@@ -55,16 +58,20 @@ export default function CVPage() {
                                     </p>
                                     <ul className="space-y-3 text-muted-foreground list-disc list-inside marker:text-primary/50">
                                         <li>
+                                            <Link href="https://viction.xyz" className="text-white hover:text-primary transition-colors font-medium">Viction</Link> (EVM Layer 1):
+                                            Core contributor to the node clients. In vic-geth (go-ethereum fork), implemented VRC-25 fee payment, Viction txpool rules, hardfork config and p2p fixes. In vic-erigon (Erigon fork), brought up PoSV consensus. In the legacy client, introduced the VRC-25 gas sponsorship standard and fixed a fee refund bug.
+                                        </li>
+                                        <li>
+                                            <span className="text-white font-medium">Vicscan</span> (Viction block explorer):
+                                            Built the Rust backend, covering the block indexer pipeline, event bus, token and NFT indexing, and market data jobs.
+                                        </li>
+                                        <li>
                                             <Link href="https://saros.xyz" className="text-white hover:text-primary transition-colors font-medium">Saros.xyz</Link> (Leading liquidity layer on Solana):
                                             Designed and built the core AMM protocol and partner SDK. Grew to $50M+ TVL and ~$1B trading volume.
                                         </li>
                                         <li>
                                             <Link href="https://dagora.xyz" className="text-white hover:text-primary transition-colors font-medium">Dagora.xyz</Link> (Multichain NFT marketplace):
                                             Designed and built the core protocol. Reached multi-million trading volume and ran ~200 launchpads.
-                                        </li>
-                                        <li>
-                                            <Link href="https://viction.xyz" className="text-white hover:text-primary transition-colors font-medium">Victionchain</Link> (Blockchain Layer 1):
-                                            Improved the sponsored transaction mechanism and introduced the VRC-25 standard so projects can pay gas for their users.
                                         </li>
                                         <li>
                                             <Link href="https://eternals.game" className="text-white hover:text-primary transition-colors font-medium">Eternals Game</Link> (Gaming on Viction):
@@ -139,9 +146,10 @@ export default function CVPage() {
                         <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm">
                             <div className="flex flex-wrap gap-2">
                                 {[
-                                    "Rust", "Solana", "Pinocchio", "AMM design", "DeFi protocols",
-                                    "Solidity", "EVM", "Account Abstraction", "zk-SNARKs",
-                                    "TypeScript", "Go", "Technical leadership"
+                                    "Go", "Rust", "Solidity", "TypeScript",
+                                    "go-ethereum", "Erigon", "EVM", "Consensus", "Txpool", "P2P",
+                                    "ERC-4337", "Foundry", "Indexers", "Tokio",
+                                    "Solana programs", "zk-SNARKs", "Technical leadership"
                                 ].map((skill) => (
                                     <Badge
                                         key={skill}

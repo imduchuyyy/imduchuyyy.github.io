@@ -13,7 +13,7 @@ export async function GET() {
   <channel>
     <title>imduchuyyy</title>
     <link>${URL}</link>
-    <description>Blockchain engineer building DeFi protocols on Solana</description>
+    <description>Blockchain engineer working on Ethereum clients and protocols</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     ${posts.map((post) => {

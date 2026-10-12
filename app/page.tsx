@@ -7,7 +7,7 @@ import { FeaturedProjects } from '@/components/ContributionsSection';
 
 export const metadata: Metadata = {
   title: "imduchuyyy",
-  description: "Blockchain engineer building DeFi protocols on Solana",
+  description: "Blockchain engineer working on Ethereum clients and protocols",
 };
 
 export default function App() {
@@ -20,13 +20,13 @@ export default function App() {
           <h1 className="text-xl font-bold tracking-tight">Hey there!</h1>
           <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
             <p>
-              My name is Huy. I&apos;m a blockchain engineer focused on DeFi protocols on Solana.
-              I&apos;m currently a Technical Leader at <Link href="https://ne.xyz" target="_blank" className="text-foreground underline">Ninety Eight</Link>,
-              where I lead the team behind <Link href="https://saros.xyz" target="_blank" className="text-foreground underline">Saros</Link>,
-              a Solana liquidity layer with $50M+ TVL and ~$1B in trading volume.
+              My name is Huy. I&apos;m a blockchain engineer working mostly on Ethereum-based clients and protocols.
+              I&apos;m a Technical Leader at <Link href="https://ne.xyz" target="_blank" className="text-foreground underline">Ninety Eight</Link>
+              and a core contributor to the <Link href="https://viction.xyz" target="_blank" className="text-foreground underline">Viction</Link> clients,
+              our forks of go-ethereum and Erigon.
             </p>
             <p>
-              In my spare time, I build <Link href="/contributions" className="text-foreground underline">open source</Link> Solana programs with Pinocchio and write about <Link href="/writing" className="text-foreground underline">cryptography and protocol design</Link>.
+              In my spare time, I build <Link href="/contributions" className="text-foreground underline">open source</Link> tools in Rust and Go and write about <Link href="/writing" className="text-foreground underline">cryptography and protocol design</Link>.
             </p>
           </div>
 

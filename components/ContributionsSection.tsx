@@ -10,34 +10,69 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "p-amm",
-    description: "Minimal constant product (x*y=k) AMM on Solana using Pinocchio.",
-    url: "https://github.com/imduchuyyy/p-amm",
+    name: "vic-geth",
+    description: "go-ethereum fork for Viction: VRC-25 fees, txpool rules, hardforks.",
+    url: "https://github.com/BuildOnViction/vic-geth",
     featured: true,
   },
   {
-    name: "saros-swap",
-    description: "Add swap-exact-out support to Saros swap AMM (merged).",
-    url: "https://github.com/saros-xyz/saros-swap/pull/5",
+    name: "vic-erigon",
+    description: "Erigon fork for Viction: PoSV consensus and genesis support.",
+    url: "https://github.com/BuildOnViction/vic-erigon",
+    featured: true,
+  },
+  {
+    name: "victionchain",
+    description: "VRC-25 upgrade and a fee refund fix in Viction Chain (merged).",
+    url: "https://github.com/BuildOnViction/victionchain/pulls?q=author%3Aimduchuyyy",
     featured: true,
   },
   {
     name: "shmcache",
     description: "Cross-process key/value cache in Rust over POSIX shared memory.",
-    url: "https://github.com/imduchuyyy/minicache",
+    url: "https://github.com/imduchuyyy/shmcache",
     featured: true,
+  },
+  {
+    name: "tinybook",
+    description: "Order book matching engine in Rust, written from scratch.",
+    url: "https://github.com/imduchuyyy/tinybook",
+    featured: true,
+  },
+  {
+    name: "agentcanpay",
+    description: "Rust CLI that gives an AI agent its own crypto wallet.",
+    url: "https://github.com/imduchuyyy/agentcanpay",
+  },
+  {
+    name: "querypro",
+    description: "Terminal UI for backend stacks, Go core with gRPC plugins.",
+    url: "https://github.com/imduchuyyy/querypro",
+  },
+  {
+    name: "multichain-indexer",
+    description: "Cut memory allocations in the Tron indexer (merged).",
+    url: "https://github.com/fystack/multichain-indexer/pull/33",
+  },
+  {
+    name: "multicall-proxy",
+    description: "Upgradeable (UUPS) multicall contract built with Foundry.",
+    url: "https://github.com/imduchuyyy/multicall-proxy",
+  },
+  {
+    name: "openpass-eth",
+    description: "ERC-4337 wallet with passkey signers and social recovery.",
+    url: "https://github.com/openpass-eth",
+  },
+  {
+    name: "saros-swap",
+    description: "Swap-exact-out support for the Saros AMM on Solana (merged).",
+    url: "https://github.com/saros-xyz/saros-swap/pulls?q=author%3Aimduchuyyy",
   },
   {
     name: "confidential-transaction",
     description: "Confidential transaction implementation using zk-SNARKs.",
     url: "https://github.com/pendapay/confidential-transaction",
-    featured: true,
-  },
-  {
-    name: "victionchain",
-    description: "Support VRC-25 upgrade feature in Viction Chain (merged).",
-    url: "https://github.com/BuildOnViction/victionchain/pull/535",
-    featured: true,
   },
   {
     name: "sol-ver",
@@ -45,14 +80,9 @@ const projects: Project[] = [
     url: "https://github.com/sol-ver/program",
   },
   {
-    name: "openpass-eth",
-    description: "An experimental Ethereum wallet leveraging Account Abstraction.",
-    url: "https://github.com/openpass-eth",
-  },
-  {
-    name: "backmybuild",
-    description: "Using stealth-address to hide creator's wallet address.",
-    url: "https://github.com/backmybuild",
+    name: "ontheflywallet",
+    description: "Wallet in Rust that derives keys on the fly, never storing them.",
+    url: "https://github.com/imduchuyyy/ontheflywallet",
   },
   {
     name: "base/webauthn-sol",
@@ -60,24 +90,14 @@ const projects: Project[] = [
     url: "https://github.com/base/webauthn-sol/pull/30",
   },
   {
-    name: "fully-onchain-marketplace",
-    description: "A fully onchain NFT marketplace.",
-    url: "https://github.com/imduchuyyy/fully-onchain-marketplace",
+    name: "backmybuild",
+    description: "Using stealth-address to hide creator's wallet address.",
+    url: "https://github.com/backmybuild",
   },
   {
     name: "crypt-env",
     description: "Secure environment manager with encrypted storage.",
     url: "https://github.com/imduchuyyy/crypt-env",
-  },
-  {
-    name: "create-viction-dapp",
-    description: "CLI tool to scaffold Viction dapps.",
-    url: "https://github.com/imduchuyyy/create-viction-dapp",
-  },
-  {
-    name: "lucci-agent",
-    description: "Personalized on-chain notification bot for Telegram.",
-    url: "https://github.com/lucci-labs/lucci-agent",
   },
 ];
 
