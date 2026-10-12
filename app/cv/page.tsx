@@ -59,7 +59,7 @@ export default function CVPage() {
                                     <ul className="space-y-3 text-muted-foreground list-disc list-inside marker:text-primary/50">
                                         <li>
                                             <Link href="https://viction.xyz" className="text-white hover:text-primary transition-colors font-medium">Viction</Link> (EVM Layer 1):
-                                            Core contributor to the node clients. In vic-geth (go-ethereum fork), implemented VRC-25 fee payment, Viction txpool rules, hardfork config and p2p fixes. In vic-erigon (Erigon fork), brought up PoSV consensus. In the legacy client, introduced the VRC-25 gas sponsorship standard and fixed a fee refund bug.
+                                            Core contributor to the node clients. In vic-geth (go-ethereum fork), implemented VRC-25 fee payment, Viction txpool rules, hardfork config. In vic-erigon (Erigon fork), brought up PoSV consensus. In the legacy client, introduced the VRC-25 gas sponsorship standard and fixed a fee refund bug.
                                         </li>
                                         <li>
                                             <span className="text-white font-medium">Vicscan</span> (Viction block explorer):
@@ -147,9 +147,9 @@ export default function CVPage() {
                             <div className="flex flex-wrap gap-2">
                                 {[
                                     "Go", "Rust", "Solidity", "TypeScript",
-                                    "go-ethereum", "Erigon", "EVM", "Consensus", "Txpool", "P2P",
+                                    "go-ethereum", "Erigon", "EVM", "Consensus", "Txpool",
                                     "ERC-4337", "Foundry", "Indexers", "Tokio",
-                                    "Solana programs", "zk-SNARKs", "Technical leadership"
+                                    "Solana programs", "Technical leadership"
                                 ].map((skill) => (
                                     <Badge
                                         key={skill}
