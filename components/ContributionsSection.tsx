@@ -1,204 +1,83 @@
-import { Github, Star, ExternalLink, ArrowUpRight } from 'lucide-react';
-import { cn } from './ui/utils';
+import { Star, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface Project {
-  id: number;
   name: string;
   description: string;
-  stars: number;
-  forks: number;
-  language: string;
-  tags: string[];
   url: string;
-  homepage?: string;
   featured?: boolean;
 }
 
 const projects: Project[] = [
   {
-    id: 2,
-    name: "minicache",
-    description:
-      "Production-ready caching server in under 1000 lines of code.",
-    stars: 85,
-    forks: 10,
-    language: "Rust",
-    tags: ["rust", "cache", "server", "linked-list"],
-    url: "https://github.com/imduchuyyy/minicache",
-    featured: true
-  },
-  {
-    id: 6,
-    name: "openpass-eth",
-    description:
-      "An experimental Ethereum wallet leveraging Account Abstraction.",
-    stars: 70,
-    forks: 8,
-    language: "Solidity",
-    tags: ["solidity", "account-abstraction", "passkey", "social-recovery"],
-    url: "https://github.com/openpass-eth",
+    name: "p-amm",
+    description: "Minimal constant product (x*y=k) AMM on Solana using Pinocchio.",
+    url: "https://github.com/imduchuyyy/p-amm",
     featured: true,
   },
   {
-    id: 3,
-    name: "p-amm",
-    description:
-      "Minimal constant product AMM on Solana using Pinocchio.",
-    stars: 210,
-    forks: 25,
-    language: "Rust",
-    tags: ["rust", "amm", "solana", "pinocchio"],
-    url: "https://github.com/imduchuyyy/p-amm",
+    name: "saros-swap",
+    description: "Add swap-exact-out support to Saros swap AMM (merged).",
+    url: "https://github.com/saros-xyz/saros-swap/pull/5",
+    featured: true,
   },
   {
-    id: 1,
-    name: "backmybuild",
-    description:
-      "Using stealth-address to hide creator's wallet address.",
-    stars: 120,
-    forks: 15,
-    language: "Solidity",
-    tags: ["web3", "nextjs", "wagmi", "base"],
-    url: "https://github.com/backmybuild",
-    homepage: "https://backmybuild.com",
-    featured: true
+    name: "shmcache",
+    description: "Cross-process key/value cache in Rust over POSIX shared memory.",
+    url: "https://github.com/imduchuyyy/minicache",
+    featured: true,
   },
   {
-    id: 4,
-    name: "sol-ver",
-    description:
-      "Intent-based trading platform on Solana (Pinocchio) (WIP).",
-    stars: 120,
-    forks: 15,
-    language: "Rust",
-    tags: ["solana", "amm", "pinocchio"],
-    url: "https://github.com/sol-ver/program",
-    featured: true
-  },
-  {
-    id: 10,
-    name: "fully-onchain-marketplace",
-    description:
-      "A fully onchain NFT marketplace.",
-    stars: 120,
-    forks: 15,
-    language: "Solidity",
-    tags: ["solidity", "nft", "marketplace", "onchain"],
-    url: "https://github.com/imduchuyyy/fully-onchain-marketplace",
-  },
-  {
-    id: 11,
     name: "confidential-transaction",
-    description:
-      "Confidential transaction implementation using zk-SNARKs.",
-    stars: 85,
-    forks: 10,
-    language: "Rust",
-    tags: ["rust", "zk-snarks", "ethereum", "confidential-transaction"],
+    description: "Confidential transaction implementation using zk-SNARKs.",
     url: "https://github.com/pendapay/confidential-transaction",
-    featured: true
+    featured: true,
   },
   {
-    id: 4,
-    name: "tokenight",
-    description:
-      "AI agent to create tokens with just a tweet.",
-    stars: 60,
-    forks: 5,
-    language: "Typescript",
-    tags: ["typescript", "ai", "bot", "telegram", "web3"],
-    url: "https://github.com/imduchuyyy/tokenight",
+    name: "victionchain",
+    description: "Support VRC-25 upgrade feature in Viction Chain (merged).",
+    url: "https://github.com/BuildOnViction/victionchain/pull/535",
+    featured: true,
   },
   {
-    id: 12,
-    name: "crypt-env",
-    description:
-      "Secure environment manager with encrypted storage.",
-    stars: 60,
-    forks: 5,
-    language: "Typescript",
-    tags: ["typescript", "environment", "manager", "encrypted", "storage"],
-    url: "https://github.com/imduchuyyy/crypt-env",
-    homepage: "https://www.npmjs.com/package/@imduchuyyy/crypt-env"
+    name: "sol-ver",
+    description: "Intent-based trading program on Solana using Pinocchio (WIP).",
+    url: "https://github.com/sol-ver/program",
   },
   {
-    id: 13,
-    name: "create-viction-dapp",
-    description:
-      "CLI tool to scaffold Viction dapps.",
-    stars: 60,
-    forks: 5,
-    language: "Typescript",
-    tags: ["typescript"],
-    url: "https://github.com/imduchuyyy/create-viction-dapp",
+    name: "openpass-eth",
+    description: "An experimental Ethereum wallet leveraging Account Abstraction.",
+    url: "https://github.com/openpass-eth",
   },
   {
-    id: 4,
-    name: "lucci-agent",
-    description:
-      "News analysis and automated Telegram posting bot.",
-    stars: 60,
-    forks: 5,
-    language: "Go",
-    tags: ["go", "ai", "bot", "telegram", "web3"],
-    url: "https://github.com/lucci-labs/lucci-agent",
-    homepage: "https://t.me/lucci_agent",
+    name: "backmybuild",
+    description: "Using stealth-address to hide creator's wallet address.",
+    url: "https://github.com/backmybuild",
   },
   {
-    id: 16,
     name: "base/webauthn-sol",
-    description:
-      "Fix passkey signature verification in webauthn-sol library.",
-    stars: 38,
-    forks: 4,
-    language: "Solidity",
-    tags: ["solidity", "evm", "webauthn"],
+    description: "Fix passkey signature malleability check (open PR).",
     url: "https://github.com/base/webauthn-sol/pull/30",
   },
   {
-    id: 17,
-    name: "saros-swap",
-    description:
-      "Add swap-exact-out support to Saros swap AMM.",
-    stars: 38,
-    forks: 4,
-    language: "Rust",
-    tags: ["rust", "solana", "swap-exact-out", "saros-swap"],
-    url: "https://github.com/saros-xyz/saros-swap/pull/5",
+    name: "fully-onchain-marketplace",
+    description: "A fully onchain NFT marketplace.",
+    url: "https://github.com/imduchuyyy/fully-onchain-marketplace",
   },
   {
-    id: 18,
-    name: "ignite/cli",
-    description:
-      "Add NFT module support to Cosmos SDK ignite CLI.",
-    stars: 38,
-    forks: 4,
-    language: "Go",
-    tags: ["go", "cosmos-sdk", "ignite", "nft"],
-    url: "https://github.com/ignite/cli/pull/3411",
+    name: "crypt-env",
+    description: "Secure environment manager with encrypted storage.",
+    url: "https://github.com/imduchuyyy/crypt-env",
   },
   {
-    id: 19,
-    name: "buildonviction/victionchain",
-    description:
-      "Support VRC-25 upgrade feature in Viction Chain.",
-    stars: 38,
-    forks: 4,
-    language: "Golang",
-    tags: ["golang", "evm", "vrc-25", "viction-chain"],
-    url: "https://github.com/BuildOnViction/victionchain/pull/535",
+    name: "create-viction-dapp",
+    description: "CLI tool to scaffold Viction dapps.",
+    url: "https://github.com/imduchuyyy/create-viction-dapp",
   },
   {
-    id: 20,
-    name: "vault-near",
-    description:
-      "Token distribution smart contract on NEAR.",
-    stars: 38,
-    forks: 4,
-    language: "Rust",
-    tags: ["rust", "near", "vault", "distribute"],
-    url: "https://github.com/imduchuyyy/vault-near",
+    name: "lucci-agent",
+    description: "Personalized on-chain notification bot for Telegram.",
+    url: "https://github.com/lucci-labs/lucci-agent",
   },
 ];
 
@@ -213,7 +92,7 @@ export function ContributionsSection() {
         <h2 className="text-xl font-bold font-mono text-muted-foreground">Other Projects</h2>
         <div className="flex flex-col space-y-4">
           {others.map((project) => (
-            <ProjectRow key={project.id} project={project} />
+            <ProjectRow key={project.name} project={project} />
           ))}
         </div>
       </div>
@@ -244,7 +123,7 @@ export function FeaturedProjects({ withHeader = true }: { withHeader?: boolean }
       )}
       <div className="flex flex-col space-y-4">
         {featured.map((project) => (
-          <ProjectRow key={project.id} project={project} />
+          <ProjectRow key={project.name} project={project} />
         ))}
       </div>
     </div>

@@ -51,20 +51,20 @@ export default function CVPage() {
                                 </div>
                                 <div className="space-y-4">
                                     <p className="text-muted-foreground">
-                                        Lead the team building smart contracts and protocols for multiple successful projects:
+                                        Lead the engineering team designing and shipping on-chain protocols on Solana and EVM:
                                     </p>
                                     <ul className="space-y-3 text-muted-foreground list-disc list-inside marker:text-primary/50">
                                         <li>
                                             <Link href="https://saros.xyz" className="text-white hover:text-primary transition-colors font-medium">Saros.xyz</Link> (Leading liquidity layer on Solana):
-                                            Authorized over 50m TVL and nearly 1b trading volume. Built core protocol and SDK for partner interaction.
+                                            Designed and built the core AMM protocol and partner SDK. Grew to $50M+ TVL and ~$1B trading volume.
                                         </li>
                                         <li>
                                             <Link href="https://dagora.xyz" className="text-white hover:text-primary transition-colors font-medium">Dagora.xyz</Link> (Multichain NFT marketplace):
-                                            Designed and built core protocol, achieved multi-million trading volume, and successfully launched nearly 200 launchpads.
+                                            Designed and built the core protocol. Reached multi-million trading volume and ran ~200 launchpads.
                                         </li>
                                         <li>
                                             <Link href="https://viction.xyz" className="text-white hover:text-primary transition-colors font-medium">Victionchain</Link> (Blockchain Layer 1):
-                                            Contributed to Victionchain to improve Sponsor transaction mechanism. Introduced new standard VRC25 to help projects sponsor gas for their users.
+                                            Improved the sponsored transaction mechanism and introduced the VRC-25 standard so projects can pay gas for their users.
                                         </li>
                                         <li>
                                             <Link href="https://eternals.game" className="text-white hover:text-primary transition-colors font-medium">Eternals Game</Link> (Gaming on Viction):
@@ -87,12 +87,12 @@ export default function CVPage() {
                                 </div>
                                 <ul className="space-y-3 text-muted-foreground list-disc list-inside marker:text-primary/50">
                                     <li>
-                                        <span className="text-white font-medium">OneId</span> (World first multichain name service):
-                                        Built and maintained core protocol for OneID.
+                                        <span className="text-white font-medium">OneId</span> (Multichain name service):
+                                        Built and maintained the core protocol.
                                     </li>
                                     <li>
                                         <span className="text-white font-medium">Baryon</span> (Multichain suite of DeFi products):
-                                        Built and maintained core products on Baryon (AMM, staking).
+                                        Built and maintained the AMM and staking protocols.
                                     </li>
                                 </ul>
                             </Card>
@@ -108,11 +108,6 @@ export default function CVPage() {
                                         <span>Aug 2020 — Nov 2021</span>
                                     </div>
                                 </div>
-                                <ul className="space-y-2 text-muted-foreground list-disc list-inside marker:text-primary/50">
-                                    <li>Conducted in-depth blockchain research, enhancing project insights.</li>
-                                    <li>Collaborated with cross-functional teams to optimize blockchain solutions.</li>
-                                    <li>Participated in innovative blockchain projects, boosting team efficiency.</li>
-                                </ul>
                             </Card>
                             <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm hover:border-primary/50 transition-colors">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
@@ -144,8 +139,9 @@ export default function CVPage() {
                         <Card className="p-6 border-white/5 bg-white/5 backdrop-blur-sm">
                             <div className="flex flex-wrap gap-2">
                                 {[
-                                    "Blockchain", "Solidity", "Rust", "Ethereum", "Solana",
-                                    "Market research", "Business operation"
+                                    "Rust", "Solana", "Pinocchio", "AMM design", "DeFi protocols",
+                                    "Solidity", "EVM", "Account Abstraction", "zk-SNARKs",
+                                    "TypeScript", "Go", "Technical leadership"
                                 ].map((skill) => (
                                     <Badge
                                         key={skill}

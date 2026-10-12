@@ -7,11 +7,11 @@ import { FeaturedProjects } from '@/components/ContributionsSection';
 
 export const metadata: Metadata = {
   title: "imduchuyyy",
-  description: "Web3 Developer & Open Source Enthusiast",
+  description: "Blockchain engineer building DeFi protocols on Solana",
 };
 
 export default function App() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().filter((post) => post.featured);
 
   return (
     <div className="min-h-screen flex flex-col pt-32 md:pt-48 pb-16 px-6 md:px-12 lg:px-24 max-w-4xl mx-auto">
@@ -20,11 +20,13 @@ export default function App() {
           <h1 className="text-xl font-bold tracking-tight">Hey there!</h1>
           <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
             <p>
-              My name is Huy. I&apos;m a Blockchain Engineer with a passion for building decentralized applications
-              and tooling that empowers users. I&apos;m currently working as a Technical Leader at <Link href="https://ne.xyz" target="_blank" className="text-foreground underline">Ninety Eight</Link>.
+              My name is Huy. I&apos;m a blockchain engineer focused on DeFi protocols on Solana.
+              I&apos;m currently a Technical Leader at <Link href="https://ne.xyz" target="_blank" className="text-foreground underline">Ninety Eight</Link>,
+              where I lead the team behind <Link href="https://saros.xyz" target="_blank" className="text-foreground underline">Saros</Link>,
+              a Solana liquidity layer with $50M+ TVL and ~$1B in trading volume.
             </p>
             <p>
-              In my spare time, I contribute to <Link href="/contributions" className="text-foreground underline">open source projects</Link> and write about <Link href="/writing" className="text-foreground underline">my learnings</Link> in the crypto space.
+              In my spare time, I build <Link href="/contributions" className="text-foreground underline">open source</Link> Solana programs with Pinocchio and write about <Link href="/writing" className="text-foreground underline">cryptography and protocol design</Link>.
             </p>
           </div>
 
@@ -43,7 +45,7 @@ export default function App() {
         </section>
 
         <section className="space-y-8 mb-24">
-          <h2 className="text-lg font-bold">Posts</h2>
+          <h2 className="text-lg font-bold">Selected posts</h2>
 
           <div className="flex flex-col space-y-4">
             {posts.length > 0 ? (
@@ -58,6 +60,7 @@ export default function App() {
             ) : (
               <p className="text-muted-foreground text-sm">No posts found.</p>
             )}
+            <Link href="/writing" className="text-sm font-mono text-muted-foreground hover:text-foreground">All posts →</Link>
           </div>
         </section>
 

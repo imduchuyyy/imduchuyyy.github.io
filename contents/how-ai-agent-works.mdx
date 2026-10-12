@@ -1,11 +1,11 @@
 ---
-title: "How AI agent works"
+title: "How AI agents work"
 date: "2026-04-28"
-description: "How AI agent works"
+description: "From text-to-text models to agents that act: tool calls and the agent loop."
 tags: ["AI", "future", "technology"]
 ---
 
-It has been six years since the release of ChatGPT, and the AI world has seen immense changes. 
+It has been three and a half years since the release of ChatGPT, and the AI world has seen immense changes. 
 We have moved from the initial version of ChatGPT—where you could only ask questions and receive answers—to powerful agents that can perform tasks for you, such as writing code, sending emails, and creating presentations.
 
 The first time I used an AI coding agent, I was amazed by its ability to understand my requests, navigate my codebase, and implement changes. 
@@ -25,33 +25,33 @@ LLM: Hi, how can I help you?
 So, how can an LLM perform actions like this?
 
 ```
-You: Hey, send mail to imduchuyyy@gmail.com, tell him don't forget to write new blog about AI agent.
+You: Hey, send mail to imduchuyyy@gmail.com, tell him not to forget to write a new blog post about AI agents.
 LLM: ...
 ```
 
 ## To text-to-action
 
-This is where the `agent` come in. Fundamentally, an agent is software that wraps around the LLM. The agent's job is to translate a user's request into a structured format containing specific actions. It sends this to the LLM, receives the response, and then executes the code associated with that action.
+This is where the `agent` comes in. Fundamentally, an agent is software that wraps around the LLM. The agent's job is to translate a user's request into a structured format containing specific actions. It sends this to the LLM, receives the response, and then executes the code associated with that action.
 
-Let me give you a very simple example to illustrate how it works, Let's say you want to have an agent to help you send email.
+Let me give you a very simple example. Let's say you want an agent to help you send email.
 
-If just send message to the LLM like this:
+If you just send the message to the LLM like this:
 ```
-You: Hey, send mail to imduchuyyy@gmail.com, tell him don't forget to write new blog about AI agent.
-LLM: (All the thing LLM can do is just generate text base on what you provide, so it will give you something like this) 
+You: Hey, send mail to imduchuyyy@gmail.com, tell him not to forget to write a new blog post about AI agents.
+LLM: (All the LLM can do is generate text based on what you provide, so it will give you something like this) 
 Sure, here is the email you can send to your co-workers.....
 ```
 
-How the Agent Intervenes?
+### How does the agent intervene?
 
 Instead of sending your message directly, the agent wraps your request with instructions (a prompt) that guide the LLM to respond in a specific format (like JSON) that a computer can understand.
 
 ```
-You will recevie a request from user. 
+You will receive a request from user. 
 Your task is to understand the user request and then translate it into a structured format with specific action and parameters. 
 The structured format should be in JSON format and should include the action you want to perform and the parameters needed for that action.
 
-1. Send an email: to send an email, just response with the following format:
+1. Send an email: to send an email, just respond with the following format:
 {
   "action": "send_email",
   "parameters": {
@@ -61,7 +61,7 @@ The structured format should be in JSON format and should include the action you
   }
 }
 
-2. Read an email: to read an email, just response with the following format:
+2. Read an email: to read an email, just respond with the following format:
 {
   "action": "read_email",
   "parameters": {
@@ -69,7 +69,7 @@ The structured format should be in JSON format and should include the action you
   }
 }
 
-3. Other action: if you want to perform other action, just response with the following format:
+3. Other action: if you want to perform other action, just respond with the following format:
 {
   "action": "other_action",
   "parameters": {
@@ -77,12 +77,12 @@ The structured format should be in JSON format and should include the action you
   }
 }
 
-Here is the user message: Hey, send mail to imduchuyyy@gmail.com, tell him don't forget to write new blog about AI agent.
+Here is the user message: Hey, send mail to imduchuyyy@gmail.com, tell him not to forget to write a new blog post about AI agents.
 
-ONLY response with the JSON format, do not include any other text or explanation.
+ONLY respond with the JSON format, do not include any other text or explanation.
 ```
 
-And then agent will pass this message to the LLM. The LLM can understand the instruction and response something like this:
+The agent then passes this message to the LLM. The LLM understands the instruction and responds something like this:
 
 ```
 {
@@ -96,6 +96,23 @@ And then agent will pass this message to the LLM. The LLM can understand the ins
 ```
 
 The agent's code parses this JSON and automatically triggers an Email API to send the message.
+
+> Modern LLM APIs support this natively as "tool calling": you pass a list of tools with a JSON schema, and the model returns a structured tool call instead of free text. The idea is exactly the same as the prompt above.
+
+## The agent loop
+
+One action is not an agent yet. What makes an agent useful is the loop: after running an action, it feeds the result back to the LLM and asks what to do next.
+
+```
+messages = [user_request]
+loop:
+  response = llm(tools, messages)
+  if response is a final answer: return it
+  result = run(response.tool_call)
+  messages += [response, result]
+```
+
+For example, "reply to the last email from my boss" becomes several steps: `search_email` to find the email, `read_email` to see what it says, then `send_email` with the reply. The LLM decides each step after seeing the result of the previous one. This is how coding agents work too: read a file, edit it, run the tests, read the errors, and try again until the tests pass.
 
 ## Summary
 

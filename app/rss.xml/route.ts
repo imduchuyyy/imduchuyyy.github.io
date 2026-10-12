@@ -11,9 +11,9 @@ export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>imduchuyyy - Web3 Developer</title>
+    <title>imduchuyyy</title>
     <link>${URL}</link>
-    <description>Web3 Developer & Open Source Enthusiast</description>
+    <description>Blockchain engineer building DeFi protocols on Solana</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     ${posts.map((post) => {

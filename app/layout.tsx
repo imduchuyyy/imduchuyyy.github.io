@@ -4,7 +4,7 @@ import 'katex/dist/katex.min.css';
 
 export const metadata: Metadata = {
   title: "imduchuyyy",
-  description: "Web3 Developer & Open Source Enthusiast",
+  description: "Blockchain engineer building DeFi protocols on Solana",
   icons: {
     icon: "https://avatars.githubusercontent.com/u/53326016?v=6",
   },

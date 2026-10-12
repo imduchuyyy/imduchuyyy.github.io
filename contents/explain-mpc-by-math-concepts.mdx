@@ -42,7 +42,11 @@ Let reconstruct the private key with given 2 points:
 > Remember that, ONLY if Alice has the approval from at least `K=2` friends, she can reconstruct the key
 
 
+> Note: the scheme above is Shamir's Secret Sharing, the building block behind MPC. Production MPC wallets go further and use threshold signatures, so the parties sign together and the full key is never reconstructed in one place.
+
 ## Real-World Applications and Beyond Basic Math
 In real-world MPC wallets, advanced cryptographic protocols and algorithms are employed to ensure the highest levels of security. The use of sophisticated mathematical techniques safeguards transactions against various types of attacks, including collusion attacks and insider threats.
 
 MPC wallets also open the door to exciting possibilities, such as decentralized finance (DeFi) applications, where multiple parties can pool their assets for lending, borrowing, and yield farming while maintaining control over their private keys.
+
+> The worked example and formula images are from [GeeksforGeeks: Shamir's Secret Sharing Algorithm](https://www.geeksforgeeks.org/shamirs-secret-sharing-algorithm-cryptography/).
